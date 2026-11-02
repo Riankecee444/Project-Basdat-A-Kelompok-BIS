@@ -2,7 +2,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once "../config/database.php";
+require_once __DIR__ . "/../config/database.php";
 
 function responseJSON($status, $message, $data = null) {
     http_response_code($status);
@@ -15,5 +15,3 @@ function responseJSON($status, $message, $data = null) {
 
     exit;
 }
-
-?>
