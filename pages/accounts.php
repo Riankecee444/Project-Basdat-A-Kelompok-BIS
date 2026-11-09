@@ -11,7 +11,6 @@ require_once "../config/database.php";
 $user_id = $_SESSION["user_id"];
 $activePage = "accounts";
 
-// Mengambil rekening milik pengguna
 $query = "SELECT id, nomor_rekening, jenis_akad, saldo, status
           FROM accounts
           WHERE user_id = ?
@@ -22,7 +21,6 @@ mysqli_stmt_bind_param($stmt, "i", $user_id);
 mysqli_stmt_execute($stmt);
 
 $result = mysqli_stmt_get_result($stmt);
-
 $rekening = [];
 
 while ($row = mysqli_fetch_assoc($result)) {
@@ -46,7 +44,7 @@ mysqli_stmt_close($stmt);
 
     <?php include "../includes/sidebar.php"; ?>
 
-    <main class="main-content">
+    <main class="main-content accounts-page">
 
         <header class="page-header">
             <div>
@@ -54,10 +52,46 @@ mysqli_stmt_close($stmt);
                 <p>Kelola rekening tabungan syariah Anda.</p>
             </div>
 
-            <button class="btn-primary" type="button">
+            <button class="btn-primary" type="button"
+                    onclick="bukaFormRekening()">
                 + Buka rekening
             </button>
         </header>
+
+        <?php if (isset($_GET["success"])): ?>
+            <div class="account-alert success">
+                Rekening berhasil dibuka!
+            </div>
+        <?php elseif (isset($_GET["error"])): ?>
+            <div class="account-alert error">
+                Pembukaan rekening gagal. Silakan coba lagi.
+            </div>
+        <?php endif; ?>
+
+        <div id="formRekening" class="form-rekening" style="display:none;">
+            <h2>Form Pembukaan Rekening</h2>
+
+            <form action="proses_rekening.php" method="POST">
+                <label for="jenis_akad">Jenis Akad</label>
+
+                <select name="jenis_akad" id="jenis_akad" required>
+                    <option value="">Pilih jenis akad</option>
+                    <option value="Wadiah">Wadiah</option>
+                    <option value="Mudharabah">Mudharabah</option>
+                </select>
+
+                <div class="form-rekening-actions">
+                    <button type="submit" class="btn-primary">
+                        Ajukan Pembukaan
+                    </button>
+
+                    <button type="button" class="btn-cancel"
+                            onclick="tutupFormRekening()">
+                        Batal
+                    </button>
+                </div>
+            </form>
+        </div>
 
         <section class="accounts-section">
             <h2>Rekening saya</h2>
@@ -69,68 +103,78 @@ mysqli_stmt_close($stmt);
 
                     <?php foreach ($rekening as $r): ?>
 
-                    <div class="account-card">
+                        <div class="account-card">
 
-                        <div class="account-top">
-                            <h3>
-                                Tabungan iB <?php echo htmlspecialchars($r["jenis_akad"]); ?>
-                            </h3>
+                            <div class="account-top">
+                                <h3>
+                                    Tabungan iB <?= htmlspecialchars($r["jenis_akad"]); ?>
+                                </h3>
 
-                            <span class="akad-badge">
-                                <?php echo htmlspecialchars($r["jenis_akad"]); ?>
-                            </span>
+                                <span class="akad-badge">
+                                    <?= htmlspecialchars($r["jenis_akad"]); ?>
+                                </span>
+                            </div>
+
+                            <p class="account-label">Saldo</p>
+
+                            <h2 class="account-balance">
+                                Rp <?= number_format($r["saldo"], 0, ',', '.'); ?>
+                            </h2>
+
+                            <div class="account-detail">
+
+                                <div>
+                                    <small>No. rekening</small>
+                                    <strong>
+                                        <?= htmlspecialchars($r["nomor_rekening"]); ?>
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Jenis akad</small>
+                                    <strong>
+                                        <?= htmlspecialchars($r["jenis_akad"]); ?>
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>ID rekening</small>
+                                    <strong>
+                                        <?= (int) $r["id"]; ?>
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Status</small>
+                                    <strong class="status-active">
+                                        <?= htmlspecialchars($r["status"]); ?>
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                            <div class="account-actions">
+                                <a href="transactions.php">Lihat mutasi</a>
+
+                                <a href="detail_rekening.php?id=<?= (int) $r["id"]; ?>">
+                                    Lihat detail
+                                </a>
+                            </div>
+
+                            <div class="account-cash-actions">
+                                <a href="setor_tunai.php">Setor tunai</a>
+                                <a href="tarik_tunai.php">Tarik tunai</a>
+                            </div>
+
                         </div>
-
-                        <p>Saldo</p>
-
-                        <h2>
-                            Rp <?php echo number_format($r["saldo"], 0, ',', '.'); ?>
-                        </h2>
-
-                        <div class="account-detail">
-
-                            <div>
-                                <small>No. rekening</small>
-                                <strong>
-                                    <?php echo htmlspecialchars($r["nomor_rekening"]); ?>
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Jenis akad</small>
-                                <strong>
-                                    <?php echo htmlspecialchars($r["jenis_akad"]); ?>
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>ID rekening</small>
-                                <strong>
-                                    <?php echo htmlspecialchars($r["id"]); ?>
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Status</small>
-                                <strong class="status-active">
-                                    <?php echo htmlspecialchars($r["status"]); ?>
-                                </strong>
-                            </div>
-
-                        </div>
-
-                        <div class="account-actions">
-                            <a href="transactions.php">Lihat mutasi</a>
-                            <a href="transactions.php">Lihat transaksi</a>
-                        </div>
-
-                    </div>
 
                     <?php endforeach; ?>
 
                 <?php else: ?>
 
-                    <p>Anda belum memiliki rekening.</p>
+                    <div class="empty-account">
+                        Anda belum memiliki rekening.
+                    </div>
 
                 <?php endif; ?>
 
@@ -144,7 +188,7 @@ mysqli_stmt_close($stmt);
             <div class="akad-grid">
 
                 <div class="akad-info">
-                    <h3>Wadiah</h3>
+                    <span class="akad-badge">Wadiah</span>
                     <p>
                         Titipan dana yang aman dan dapat diambil
                         kapan saja. Bank boleh memberikan bonus
@@ -153,7 +197,7 @@ mysqli_stmt_close($stmt);
                 </div>
 
                 <div class="akad-info">
-                    <h3>Mudharabah</h3>
+                    <span class="akad-badge">Mudharabah</span>
                     <p>
                         Kerja sama pengelolaan dana. Keuntungan
                         dibagi sesuai nisbah yang disepakati
@@ -166,6 +210,16 @@ mysqli_stmt_close($stmt);
 
     </main>
 </div>
+
+<script>
+function bukaFormRekening() {
+    document.getElementById("formRekening").style.display = "block";
+}
+
+function tutupFormRekening() {
+    document.getElementById("formRekening").style.display = "none";
+}
+</script>
 
 </body>
 </html>

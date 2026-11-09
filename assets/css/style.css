@@ -1366,3 +1366,3131 @@ body {
     min-width: 0;
 }
 
+/* =================================
+   LOGIN BANK IMAN SYARIAH
+================================= */
+
+.login-page {
+    background: #f5f8f6;
+}
+
+.login-page .container {
+    min-height: 100vh;
+}
+
+/* PANEL KIRI */
+
+.login-page .left-panel {
+    width: 55%;
+    position: relative;
+    overflow: hidden;
+    padding: 45px 65px;
+    background: linear-gradient(135deg, #064e3b, #087653, #11966d);
+    color: white;
+}
+
+/* Lingkaran dekorasi */
+
+.login-page .left-panel::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 50%;
+    right: -130px;
+    top: 100px;
+}
+
+.login-page .left-panel::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    right: -70px;
+    top: 165px;
+}
+
+/* LOGO */
+
+.login-page .brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    z-index: 2;
+}
+
+.login-page .brand-logo {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    background: white;
+    color: #087653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login-page .brand h2 {
+    font-size: 21px;
+}
+
+/* TEKS SAMBUTAN */
+
+.login-page .welcome {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+}
+
+.login-page .welcome h1 {
+    font-size: 42px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.login-page .welcome p {
+    color: #d8eee5;
+    line-height: 1.8;
+}
+
+.login-page .features {
+    position: relative;
+    z-index: 2;
+}
+
+.login-page .features p {
+    color: #e3f5ed;
+    margin-bottom: 17px;
+}
+
+.login-page .left-panel footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* PANEL KANAN */
+
+.login-page .right-panel {
+    width: 45%;
+    background: #f5f8f6;
+    padding: 40px;
+}
+
+.login-page .login-box {
+    max-width: 400px;
+    background: white;
+    padding: 38px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(20, 70, 50, 0.07);
+}
+
+.login-page .login-box h2 {
+    color: #174b38;
+    font-size: 30px;
+}
+
+.login-page .login-box > p {
+    color: #829087;
+    line-height: 1.6;
+}
+
+.login-page .login-box label {
+    color: #294b3b;
+}
+
+.login-page .login-box input {
+    background: #fbfdfc;
+    border: 1px solid #dce8e1;
+    border-radius: 9px;
+    padding: 15px;
+}
+
+.login-page .login-box input:focus {
+    border-color: #087653;
+    box-shadow: 0 0 0 3px rgba(8,118,83,0.09);
+}
+
+.login-page .login-box button {
+    background: #087653;
+    border-radius: 9px;
+    padding: 15px;
+    transition: 0.2s;
+}
+
+.login-page .login-box button:hover {
+    background: #065b40;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .login-page .container {
+        flex-direction: column;
+    }
+
+    .login-page .left-panel,
+    .login-page .right-panel {
+        width: 100%;
+    }
+
+    .login-page .left-panel {
+        min-height: 420px;
+        padding: 30px;
+    }
+
+    .login-page .welcome {
+        margin-top: 65px;
+        margin-bottom: 35px;
+    }
+
+    .login-page .welcome h1 {
+        font-size: 32px;
+    }
+
+    .login-page .right-panel {
+        padding: 35px 20px;
+    }
+
+    .login-page .login-box {
+        padding: 28px 22px;
+    }
+}
+.login-page .password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.login-page .password-wrapper input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 48px 15px 15px;
+}
+
+.login-page .password-wrapper .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 34%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.login-page .password-wrapper .toggle-password svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+/* OTP VERIFICATION PAGE */
+.otp-page .otp-card {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.otp-page .otp-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5ee;
+    color: #16834b;
+    border-radius: 50%;
+    font-size: 28px;
+}
+
+.otp-page .otp-card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.otp-page .otp-description {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.otp-page .otp-timer {
+    text-align: center;
+    background: #f0f8f3;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+
+.otp-page .otp-timer p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.otp-page .otp-timer h2 {
+    color: #16834b;
+    font-size: 32px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.otp-page .otp-input {
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.otp-page .otp-demo {
+    background: #e8f5ee;
+    color: #246b46;
+    padding: 14px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.otp-page .otp-demo strong {
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+/* RAPPIKAN TAMPILAN OTP */
+.otp-page .right-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.otp-page .otp-card {
+    width: 100%;
+    max-width: 390px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.otp-page .otp-card h2 {
+    font-size: 26px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.otp-page .otp-card .otp-description {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 22px;
+    color: #777;
+}
+
+.otp-page .otp-card label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.otp-page .otp-timer {
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.otp-page .otp-timer p {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.otp-page .otp-timer h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.otp-page .otp-input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 48px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.otp-page .otp-input::placeholder {
+    font-size: 13px;
+    letter-spacing: normal;
+}
+
+.otp-page .otp-demo {
+    padding: 12px;
+    margin-top: 18px;
+}
+
+.otp-page .otp-demo strong {
+    font-size: 14px;
+    letter-spacing: normal;
+}
+
+.otp-page .otp-demo .otp-code {
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+/* SIDEBAR BRAND */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0 35px;
+}
+
+.sidebar-brand-logo {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5ee;
+    color: #087a55;
+    border-radius: 11px;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.sidebar-brand h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #087a55;
+    margin: 0;
+}
+
+/* SIDEBAR BERSAMA */
+
+.main-sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: #087653;
+    padding: 30px 20px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.main-sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.main-sidebar .sidebar-label {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.main-sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 13px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+.main-sidebar a:hover,
+.main-sidebar a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .main-sidebar {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* PERBAIKAN POSISI SIDEBAR DASHBOARD */
+
+.dashboard-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.dashboard-container > .main-sidebar {
+    flex-shrink: 0;
+}
+
+.dashboard-container > .dashboard {
+    flex: 1;
+    min-width: 0;
+}
+
+/* =================================
+   LOGIN BANK IMAN SYARIAH
+================================= */
+
+.login-page {
+    background: #f5f8f6;
+}
+
+.login-page .container {
+    min-height: 100vh;
+}
+
+/* PANEL KIRI */
+
+.login-page .left-panel {
+    width: 55%;
+    position: relative;
+    overflow: hidden;
+    padding: 45px 65px;
+    background: linear-gradient(135deg, #064e3b, #087653, #11966d);
+    color: white;
+}
+
+/* Lingkaran dekorasi */
+
+.login-page .left-panel::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 50%;
+    right: -130px;
+    top: 100px;
+}
+
+.login-page .left-panel::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    right: -70px;
+    top: 165px;
+}
+
+/* LOGO */
+
+.login-page .brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    z-index: 2;
+}
+
+.login-page .brand-logo {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    background: white;
+    color: #087653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login-page .brand h2 {
+    font-size: 21px;
+}
+
+/* TEKS SAMBUTAN */
+
+.login-page .welcome {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+}
+
+.login-page .welcome h1 {
+    font-size: 42px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.login-page .welcome p {
+    color: #d8eee5;
+    line-height: 1.8;
+}
+
+.login-page .features {
+    position: relative;
+    z-index: 2;
+}
+
+.login-page .features p {
+    color: #e3f5ed;
+    margin-bottom: 17px;
+}
+
+.login-page .left-panel footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* PANEL KANAN */
+
+.login-page .right-panel {
+    width: 45%;
+    background: #f5f8f6;
+    padding: 40px;
+}
+
+.login-page .login-box {
+    max-width: 400px;
+    background: white;
+    padding: 38px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(20, 70, 50, 0.07);
+}
+
+.login-page .login-box h2 {
+    color: #174b38;
+    font-size: 30px;
+}
+
+.login-page .login-box > p {
+    color: #829087;
+    line-height: 1.6;
+}
+
+.login-page .login-box label {
+    color: #294b3b;
+}
+
+.login-page .login-box input {
+    background: #fbfdfc;
+    border: 1px solid #dce8e1;
+    border-radius: 9px;
+    padding: 15px;
+}
+
+.login-page .login-box input:focus {
+    border-color: #087653;
+    box-shadow: 0 0 0 3px rgba(8,118,83,0.09);
+}
+
+.login-page .login-box button {
+    background: #087653;
+    border-radius: 9px;
+    padding: 15px;
+    transition: 0.2s;
+}
+
+.login-page .login-box button:hover {
+    background: #065b40;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .login-page .container {
+        flex-direction: column;
+    }
+
+    .login-page .left-panel,
+    .login-page .right-panel {
+        width: 100%;
+    }
+
+    .login-page .left-panel {
+        min-height: 420px;
+        padding: 30px;
+    }
+
+    .login-page .welcome {
+        margin-top: 65px;
+        margin-bottom: 35px;
+    }
+
+    .login-page .welcome h1 {
+        font-size: 32px;
+    }
+
+    .login-page .right-panel {
+        padding: 35px 20px;
+    }
+
+    .login-page .login-box {
+        padding: 28px 22px;
+    }
+}
+.login-page .password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.login-page .password-wrapper input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 48px 15px 15px;
+}
+
+.login-page .password-wrapper .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 34%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.login-page .password-wrapper .toggle-password svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+/* OTP VERIFICATION PAGE */
+.otp-page .otp-card {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.otp-page .otp-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5ee;
+    color: #16834b;
+    border-radius: 50%;
+    font-size: 28px;
+}
+
+.otp-page .otp-card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.otp-page .otp-description {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.otp-page .otp-timer {
+    text-align: center;
+    background: #f0f8f3;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+
+.otp-page .otp-timer p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.otp-page .otp-timer h2 {
+    color: #16834b;
+    font-size: 32px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.otp-page .otp-input {
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.otp-page .otp-demo {
+    background: #e8f5ee;
+    color: #246b46;
+    padding: 14px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.otp-page .otp-demo strong {
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+/* RAPPIKAN TAMPILAN OTP */
+.otp-page .right-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.otp-page .otp-card {
+    width: 100%;
+    max-width: 390px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.otp-page .otp-card h2 {
+    font-size: 26px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.otp-page .otp-card .otp-description {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 22px;
+    color: #777;
+}
+
+.otp-page .otp-card label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.otp-page .otp-timer {
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.otp-page .otp-timer p {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.otp-page .otp-timer h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.otp-page .otp-input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 48px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.otp-page .otp-input::placeholder {
+    font-size: 13px;
+    letter-spacing: normal;
+}
+
+.otp-page .otp-demo {
+    padding: 12px;
+    margin-top: 18px;
+}
+
+.otp-page .otp-demo strong {
+    font-size: 14px;
+    letter-spacing: normal;
+}
+
+.otp-page .otp-demo .otp-code {
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+/* SIDEBAR BRAND */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0 35px;
+}
+
+.sidebar-brand-logo {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5ee;
+    color: #087a55;
+    border-radius: 11px;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.sidebar-brand h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #087a55;
+    margin: 0;
+}
+
+/* =====================================
+   DASHBOARD BANK IMAN SYARIAH
+   DESAIN MENGIKUTI FIGMA
+===================================== */
+
+.dashboard-page {
+    margin: 0;
+    background: #f7f9f8;
+    font-family: Arial, sans-serif;
+    color: #26352e;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: #f7f9f8;
+}
+
+/* SIDEBAR */
+.dashboard-container > .main-sidebar {
+    width: 250px;
+    min-width: 250px;
+    min-height: 100vh;
+    padding: 28px 18px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-right: 1px solid #e8eeea;
+}
+
+.main-sidebar .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.main-sidebar .sidebar-brand-logo {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #087653;
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.main-sidebar .sidebar-brand h2 {
+    margin: 0;
+    color: #087653;
+    font-size: 16px;
+}
+
+.main-sidebar .sidebar-label {
+    margin: 0 10px 15px;
+    color: #9ba9a1;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.main-sidebar > a {
+    display: block;
+    padding: 14px 16px;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    color: #64736a;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.main-sidebar > a:hover,
+.main-sidebar > a.active {
+    background: #e8f5ef;
+    color: #087653;
+    font-weight: bold;
+}
+
+.main-sidebar > a:last-child {
+    margin-top: 35px;
+    color: #d9534f;
+}
+
+/* MAIN DASHBOARD */
+.dashboard-container > .dashboard {
+    flex: 1;
+    min-width: 0;
+    background: #f7f9f8;
+}
+
+.dashboard-content {
+    padding: 35px;
+}
+
+/* HEADER */
+.figma-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.figma-header h1 {
+    margin: 0 0 8px;
+    color: #26352e;
+    font-size: 25px;
+}
+
+.figma-header p {
+    margin: 0;
+    color: #89968e;
+    font-size: 14px;
+}
+
+.transfer-button {
+    padding: 13px 25px;
+    border-radius: 9px;
+    background: #087653;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* SUMMARY CARDS */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.summary-card {
+    padding: 25px;
+    background: white;
+    border: 1px solid #e8eeea;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.025);
+}
+
+.summary-card span {
+    color: #829087;
+    font-size: 13px;
+}
+
+.summary-card h2 {
+    margin: 17px 0 10px;
+    color: #26352e;
+    font-size: 25px;
+}
+
+.summary-card p {
+    margin: 0;
+    color: #89968e;
+    font-size: 12px;
+}
+
+.summary-card.saldo-card {
+    background: linear-gradient(135deg, #087653, #006044);
+}
+
+.summary-card.saldo-card span,
+.summary-card.saldo-card h2,
+.summary-card.saldo-card p {
+    color: white;
+}
+
+/* DASHBOARD GRID */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.dashboard-left,
+.dashboard-right {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* CONTENT CARD */
+.content-card {
+    padding: 25px;
+    background: white;
+    border: 1px solid #e8eeea;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.025);
+}
+
+.content-card h2 {
+    margin: 0 0 8px;
+    color: #26352e;
+    font-size: 18px;
+}
+
+.card-description {
+    margin: 0 0 22px;
+    color: #94a097;
+    font-size: 13px;
+}
+
+/* ACCOUNT */
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.account-item:last-child {
+    border-bottom: none;
+}
+
+.account-item h3 {
+    margin: 0 0 7px;
+    color: #34463c;
+    font-size: 14px;
+}
+
+.account-item p {
+    margin: 0;
+    color: #94a097;
+    font-size: 12px;
+}
+
+.account-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.account-right span {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e8f5ef;
+    color: #087653;
+    font-size: 11px;
+}
+
+.account-right strong {
+    color: #26352e;
+    font-size: 14px;
+}
+
+/* TRANSACTIONS */
+.transaction-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.transaction-heading,
+.transaction-row {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr 0.7fr 1fr;
+    gap: 12px;
+    align-items: center;
+    min-width: 480px;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.transaction-heading {
+    color: #94a097;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.transaction-row {
+    color: #64736a;
+    font-size: 12px;
+}
+
+.transaction-row strong {
+    color: #34463c;
+}
+
+.transaction-row strong.masuk {
+    color: #087653;
+}
+
+.transaction-row strong.keluar {
+    color: #d9534f;
+}
+
+/* RIGHT PANEL */
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.status-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #e8f5ef;
+    color: #087653;
+    font-size: 11px;
+}
+
+.content-card > h3 {
+    color: #34463c;
+    font-size: 15px;
+}
+
+.content-card > p {
+    color: #89968e;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 11px 17px;
+    border-radius: 8px;
+    background: #e8f5ef;
+    color: #087653;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .dashboard-container > .main-sidebar {
+        width: 180px;
+        min-width: 180px;
+        padding: 18px 10px;
+    }
+
+    .dashboard-content {
+        padding: 18px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .figma-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .figma-header h1 {
+        font-size: 20px;
+    }
+}
+
+/* FIX SIDEBAR PROFILE DAN LOGOUT */
+
+.dashboard-container > .main-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.main-sidebar .sidebar-bottom {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-sidebar .sidebar-profile {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 12px;
+    padding: 12px 10px;
+    margin: 0 0 12px;
+    background: #f7f9f8;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.main-sidebar .profile-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: #d8f5e8;
+    color: #087653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.main-sidebar .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.main-sidebar .profile-info strong {
+    font-size: 13px;
+    color: #26352e;
+}
+
+.main-sidebar .profile-info span {
+    font-size: 11px;
+    color: #89968e;
+}
+
+.main-sidebar .sidebar-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 42px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #dfe7e2;
+    border-radius: 10px;
+    background: white;
+    color: #34463c;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.main-sidebar .sidebar-logout:hover {
+    background: #f0f7f3;
+}
+/* FIX MENU SIDEBAR */
+.main-sidebar .sidebar-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100%;
+}
+
+.main-sidebar .sidebar-menu a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 12px !important;
+    margin: 0 !important;
+    color: #64736a !important;
+    background: transparent;
+    text-decoration: none !important;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.main-sidebar .sidebar-menu a .menu-dot {
+    display: inline-block !important;
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    border-radius: 50%;
+    background: #cbd5ce !important;
+}
+
+.main-sidebar .sidebar-menu a.active {
+    color: #087653 !important;
+    background: #e8f5ef !important;
+    font-weight: 600;
+}
+
+.main-sidebar .sidebar-menu a.active .menu-dot {
+    background: #087653 !important;
+}
+
+.main-sidebar .sidebar-menu a:hover {
+    color: #087653 !important;
+    background: #f0f7f3 !important;
+}
+/* PROFILE SIDEBAR - FIX LAYOUT */
+
+.main-sidebar .sidebar-profile {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+
+    width: 100%;
+    padding: 12px 10px !important;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+
+    background: #f7f9f8;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.main-sidebar .profile-avatar {
+    display: flex !important;
+    flex-shrink: 0;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px;
+
+    border-radius: 50%;
+    background: #d8f5e8;
+    color: #087653;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.main-sidebar .profile-info {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: flex-start !important;
+    gap: 4px;
+
+    min-width: 0;
+    flex: 1;
+}
+
+.main-sidebar .profile-info strong {
+    display: block;
+    margin: 0;
+    color: #26352e;
+    font-size: 13px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.main-sidebar .profile-info span {
+    display: block;
+    margin: 0;
+    color: #89968e;
+    font-size: 11px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+/* POSISI AVATAR PROFILE */
+.main-sidebar .sidebar-profile {
+    align-items: center !important;
+}
+
+.main-sidebar .profile-avatar {
+    position: relative;
+    top: 8px;
+}
+
+.main-sidebar .profile-info {
+    position: relative;
+    top: 1px;
+}
+/* =================================
+   REKENING - DESAIN FIGMA
+================================= */
+
+.accounts-page {
+    background: #F4F7F5;
+    padding: 35px 40px;
+}
+
+.accounts-page .page-header {
+    margin-bottom: 35px;
+}
+
+.accounts-page .page-header h1 {
+    font-size: 28px;
+    color: #263B33;
+}
+
+.accounts-page .btn-primary {
+    background: #087653;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 13px 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.accounts-page .btn-primary:hover {
+    background: #006B50;
+}
+
+.accounts-section > h2,
+.akad-section > h2 {
+    font-size: 19px;
+    color: #263B33;
+    margin-bottom: 7px;
+}
+
+.accounts-section > p,
+.akad-section > p {
+    color: #7A8982;
+    font-size: 13px;
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 22px;
+}
+
+.account-card {
+    background: white;
+    border: 1px solid #E5ECE8;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 8px #00000005;
+    border-left: 1px solid #E5ECE8;
+}
+
+.account-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.account-top h3 {
+    color: #263B33;
+    font-size: 17px;
+}
+
+.akad-badge {
+    display: inline-block;
+    background: #E8F8F0;
+    color: #087653;
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.account-card .account-label {
+    color: #7A8982;
+    font-size: 13px;
+    margin-top: 23px;
+}
+
+.account-card .account-balance {
+    color: #087653;
+    font-size: 29px;
+    margin: 7px 0 20px;
+}
+
+.account-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+    border-top: 1px solid #E8EEEA;
+    padding-top: 18px;
+}
+
+.account-detail div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.account-detail small {
+    color: #89958F;
+    font-size: 12px;
+}
+
+.account-detail strong {
+    color: #263B33;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.account-detail .status-active {
+    color: #087653;
+}
+
+.account-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.account-actions a,
+.account-cash-actions a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 11px 8px;
+    border: 1px solid #DCE6E0;
+    border-radius: 8px;
+    color: #087653;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.account-actions a:hover,
+.account-cash-actions a:hover {
+    background: #E8F4EF;
+}
+
+.account-cash-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.akad-section {
+    background: white;
+    border: 1px solid #E5ECE8;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 28px;
+}
+
+.akad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.akad-info {
+    background: #F7F9FA;
+    border: 1px solid #E5ECE8;
+    border-radius: 11px;
+    padding: 18px;
+}
+
+.akad-info p {
+    color: #64736C;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+.form-rekening {
+    background: white;
+    border: 1px solid #E5ECE8;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 28px;
+}
+
+.form-rekening h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #263B33;
+}
+
+.form-rekening label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.form-rekening select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #D8E2DC;
+    border-radius: 8px;
+    background: white;
+}
+
+.form-rekening-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.btn-cancel {
+    border: 1px solid #D8E2DC;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.account-alert {
+    padding: 13px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.account-alert.success {
+    background: #E8F8F0;
+    color: #087653;
+}
+
+.account-alert.error {
+    background: #FDECEC;
+    color: #B42318;
+}
+
+.empty-account {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    color: #7A8982;
+}
+
+@media (max-width: 900px) {
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .accounts-page {
+        padding: 22px 16px;
+    }
+
+    .account-detail,
+    .akad-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-card {
+        padding: 18px;
+    }
+
+    .account-actions,
+    .account-cash-actions {
+        flex-direction: column;
+    }
+}
+/* =================================
+   SIDEBAR - SAMAKAN DENGAN BERANDA
+================================= */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+    background: #F4F7F5;
+}
+
+.app-layout .main-sidebar {
+    width: 250px !important;
+    min-width: 250px;
+    min-height: 100vh;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background: #FFFFFF !important;
+    color: #263B33 !important;
+    border-right: 1px solid #E5ECE8;
+    padding: 28px 18px;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* Logo dan nama bank */
+.main-sidebar .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 35px;
+    color: #087653 !important;
+}
+
+/* Tulisan menu utama */
+.main-sidebar .sidebar-label {
+    color: #89958F !important;
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+/* Menu navigasi */
+.main-sidebar .sidebar-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px;
+    width: 100%;
+}
+
+.main-sidebar .sidebar-menu a {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    padding: 12px !important;
+    color: #64736C !important;
+    background: transparent !important;
+    border-radius: 9px;
+    text-decoration: none !important;
+    font-size: 14px;
+}
+
+/* Menu aktif */
+.main-sidebar .sidebar-menu a.active {
+    color: #087653 !important;
+    background: #E8F8F0 !important;
+    font-weight: 600;
+}
+
+.main-sidebar .sidebar-menu a .menu-dot {
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    border-radius: 50%;
+    background: #CBD5CE !important;
+}
+
+.main-sidebar .sidebar-menu a.active .menu-dot {
+    background: #087653 !important;
+}
+
+/* Profil dan tombol keluar di bawah */
+.main-sidebar .sidebar-bottom {
+    margin-top: auto !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+}
+
+.main-sidebar .sidebar-profile {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px;
+    padding: 12px !important;
+    background: #F7F9F8 !important;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.main-sidebar .sidebar-logout {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background: #FFFFFF !important;
+    color: #263B33 !important;
+    border: 1px solid #DCE6E0;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-layout .main-sidebar {
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto;
+        min-height: auto;
+    }
+
+    .main-sidebar .sidebar-bottom {
+        margin-top: 20px !important;
+    }
+}
+/* ===== HALAMAN PEMBIAYAAN ===== */
+
+.financing-container {
+    display: flex;
+    min-height: 100vh;
+    background: #F4F7F5;
+}
+
+.financing-container .main-sidebar {
+    width: 250px !important;
+    min-width: 250px;
+    height: 100vh;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    background: #fff !important;
+    border-right: 1px solid #E5ECE8;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0;
+}
+
+.financing-content {
+    flex: 1;
+    min-width: 0;
+    padding: 35px 40px;
+}
+
+.financing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.financing-header h1 {
+    margin: 0 0 5px;
+    color: #172B25;
+    font-size: 27px;
+}
+
+.financing-header p,
+.payment-history > p,
+.application-card > p,
+.application-history > p {
+    color: #89958F;
+    font-size: 13px;
+    margin: 0;
+}
+
+.btn-ajukan-top,
+.btn-submit-financing {
+    background: #087C5B;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.financing-card,
+.payment-history,
+.application-card,
+.application-history,
+.financing-empty {
+    background: #fff;
+    border: 1px solid #E8EEEA;
+    border-radius: 16px;
+    padding: 23px;
+    box-sizing: border-box;
+}
+
+.financing-card {
+    margin-bottom: 25px;
+}
+
+.financing-card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.financing-card-heading h2 {
+    color: #086C51;
+    margin: 0 0 4px;
+    font-size: 23px;
+}
+
+.financing-card-heading p {
+    color: #89958F;
+    font-size: 12px;
+    margin: 0;
+}
+
+.financing-status,
+.payment-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #E9F9F1;
+    color: #087653;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.financing-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.financing-box {
+    background: #F8FAF9;
+    border: 1px solid #E8EEEA;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.financing-box span {
+    color: #89958F;
+    font-size: 12px;
+}
+
+.financing-box h3 {
+    color: #172B25;
+    font-size: 16px;
+    margin: 7px 0 0;
+}
+
+.financing-progress {
+    margin-top: 20px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: #E3E9E6;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #087C5B;
+    border-radius: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 9px;
+    font-size: 12px;
+    color: #89958F;
+}
+
+.progress-info strong {
+    color: #263B33;
+}
+
+.financing-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.payment-history h2,
+.application-card h2,
+.application-history h2 {
+    color: #263B33;
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.payment-history table,
+.application-history table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.payment-history th,
+.payment-history td,
+.application-history th,
+.application-history td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #E9EEEB;
+    text-align: left;
+    font-size: 12px;
+}
+
+.payment-history th,
+.application-history th {
+    color: #89958F;
+    font-weight: 500;
+}
+
+.payment-history td,
+.application-history td {
+    color: #34463E;
+}
+
+.payment-status.lunas {
+    background: #E9F9F1;
+    color: #087653;
+}
+
+.payment-status.akan-datang {
+    background: #F0F2F5;
+    color: #64736C;
+}
+
+.application-card form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.application-card label {
+    color: #52645B;
+    font-size: 12px;
+    margin: 0 0 7px;
+}
+
+.application-card input,
+.application-card select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #DCE5E0;
+    border-radius: 10px;
+    margin-bottom: 17px;
+    color: #34463E;
+    background: #fff;
+    font-size: 13px;
+}
+
+.application-card input:focus,
+.application-card select:focus {
+    outline: none;
+    border-color: #087C5B;
+}
+
+.estimate-box {
+    background: #E9FAF2;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 0 0 16px;
+}
+
+.estimate-box span,
+.estimate-box small {
+    color: #568675;
+    font-size: 11px;
+}
+
+.estimate-box h3 {
+    color: #086C51;
+    margin: 6px 0;
+    font-size: 19px;
+}
+
+.btn-submit-financing {
+    width: 100%;
+}
+
+.application-history {
+    margin-top: 22px;
+}
+
+.financing-empty {
+    margin-bottom: 25px;
+}
+
+.financing-empty h2 {
+    color: #263B33;
+    margin: 0 0 8px;
+}
+
+.financing-empty p,
+.empty-text {
+    color: #89958F;
+    font-size: 13px;
+}
+
+.financing-alert {
+    padding: 13px 16px;
+    background: #E9F9F1;
+    color: #087653;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.financing-note {
+    display: block;
+    margin-top: 12px;
+    color: #89958F;
+    font-size: 11px;
+}
+
+@media (max-width: 1000px) {
+    .financing-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .financing-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .financing-container {
+        flex-direction: column;
+    }
+
+    .financing-container .main-sidebar {
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto;
+        min-height: auto;
+    }
+
+    .financing-content {
+        padding: 22px 15px;
+    }
+
+    .financing-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .progress-info {
+        flex-direction: column;
+    }
+}
+/* ===== FIX KARTU PEMBIAYAAN AGAR SAMA DENGAN FIGMA ===== */
+
+.financing-content .financing-card {
+    width: 100%;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E8EEEA;
+    border-radius: 17px;
+    box-sizing: border-box;
+}
+
+/* Bagian Murabahah dan status Aktif */
+.financing-content .financing-card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.financing-content .financing-card-heading h2 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #086C51;
+    margin: 0 0 4px;
+}
+
+.financing-content .financing-card-heading p {
+    font-size: 12px;
+    color: #89958F;
+    margin: 0;
+}
+
+.financing-content .financing-card-heading .financing-status {
+    background: #E9F9F1;
+    color: #087653;
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Empat kotak informasi */
+.financing-content .financing-card .financing-summary {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.financing-content .financing-card .financing-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 72px;
+    padding: 13px 15px;
+    margin: 0;
+    background: #F8FAFB;
+    border: 1px solid #E8EDF1;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.financing-content .financing-card .financing-box span {
+    display: block;
+    color: #89958F;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.financing-content .financing-card .financing-box h3 {
+    display: block;
+    color: #172B25;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Progress pembayaran */
+.financing-content .financing-card .financing-progress {
+    width: 100%;
+    margin-top: 17px;
+}
+
+.financing-content .financing-card .progress-track {
+    width: 100%;
+    height: 10px;
+    background: #E3E9EF;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.financing-content .financing-card .progress-fill {
+    height: 100%;
+    background: #087C5B;
+    border-radius: 20px;
+}
+
+.financing-content .financing-card .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 900px) {
+    .financing-content .financing-card .financing-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .financing-content .financing-card {
+        padding: 17px;
+    }
+
+    .financing-content .financing-card .financing-summary {
+        grid-template-columns: 1fr !important;
+    }
+
+    .financing-content .financing-card .financing-box h3 {
+        white-space: normal;
+    }
+}
+/* ===== HALAMAN ZAKAT ===== */
+
+.zakat-container {
+    display: flex;
+    min-height: 100vh;
+    background: #F4F7F5;
+}
+
+.zakat-container .main-sidebar {
+    width: 250px !important;
+    min-width: 250px;
+    height: 100vh;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    background: #fff !important;
+    border-right: 1px solid #E5ECE8;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0;
+}
+
+.zakat-content {
+    flex: 1;
+    min-width: 0;
+    padding: 35px 40px;
+    box-sizing: border-box;
+}
+
+.zakat-header {
+    margin-bottom: 25px;
+}
+
+.zakat-header h1 {
+    font-size: 27px;
+    color: #172B25;
+    margin: 0 0 5px;
+}
+
+.zakat-header p {
+    color: #89958F;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Ringkasan */
+
+.zakat-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.zakat-summary-card {
+    background: #fff;
+    border: 1px solid #E8EEEA;
+    border-radius: 16px;
+    padding: 22px;
+    min-height: 122px;
+    box-sizing: border-box;
+}
+
+.zakat-summary-card p {
+    color: #89958F;
+    font-size: 12px;
+    margin: 0 0 8px;
+}
+
+.zakat-summary-card h2 {
+    color: #172B25;
+    font-size: 25px;
+    margin: 0 0 7px;
+}
+
+.zakat-summary-card span {
+    color: #89958F;
+    font-size: 12px;
+}
+
+.zakat-summary-card.zakat-total {
+    background: #08654D;
+    border-color: #08654D;
+}
+
+.zakat-summary-card.zakat-total p,
+.zakat-summary-card.zakat-total span {
+    color: #C5E5D9;
+}
+
+.zakat-summary-card.zakat-total h2 {
+    color: #fff;
+}
+
+/* Riwayat dan kalkulator */
+
+.zakat-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.zakat-history,
+.zakat-calculator {
+    background: #fff;
+    border: 1px solid #E8EEEA;
+    border-radius: 16px;
+    padding: 23px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.zakat-history h2,
+.zakat-calculator h2 {
+    color: #263B33;
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.zakat-history > p,
+.zakat-calculator > p {
+    color: #89958F;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Tabel */
+
+.zakat-history .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.zakat-history table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.zakat-history th,
+.zakat-history td {
+    padding: 15px 9px;
+    border-bottom: 1px solid #E9EEEB;
+    text-align: left;
+    font-size: 12px;
+}
+
+.zakat-history th {
+    color: #89958F;
+    font-weight: 500;
+}
+
+.zakat-history td {
+    color: #34463E;
+}
+
+.zakat-status {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 20px;
+    background: #E9F9F1;
+    color: #087653;
+    font-size: 11px;
+}
+
+.zakat-empty {
+    text-align: center !important;
+    color: #89958F !important;
+    padding: 25px !important;
+}
+
+/* Form kalkulator */
+
+.zakat-calculator form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.zakat-calculator label {
+    color: #52645B;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.zakat-calculator input,
+.zakat-calculator select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #DCE5E0;
+    border-radius: 10px;
+    background: #fff;
+    color: #34463E;
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.zakat-calculator input:focus {
+    outline: none;
+    border-color: #087C5B;
+}
+
+/* Hasil perhitungan */
+
+.zakat-result {
+    background: #E9FAF2;
+    border-radius: 12px;
+    padding: 17px;
+    margin-bottom: 16px;
+}
+
+.zakat-result span,
+.zakat-result small {
+    color: #568675;
+    font-size: 11px;
+}
+
+.zakat-result h2 {
+    color: #086C51;
+    font-size: 23px;
+    margin: 7px 0;
+}
+
+.btn-bayar-zakat {
+    width: 100%;
+    padding: 13px;
+    background: #087C5B;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-bayar-zakat:hover {
+    background: #06664B;
+}
+
+.zakat-disclaimer {
+    display: block;
+    color: #89958F;
+    font-size: 10px;
+    line-height: 1.5;
+    margin-top: 13px;
+}
+
+.zakat-alert {
+    background: #E9F9F1;
+    color: #087653;
+    padding: 13px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+/* Responsif */
+
+@media (max-width: 1000px) {
+    .zakat-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .zakat-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .zakat-container {
+        flex-direction: column;
+    }
+
+    .zakat-container .main-sidebar {
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto;
+        min-height: auto;
+    }
+
+    .zakat-content {
+        padding: 22px 15px;
+    }
+
+    .zakat-summary {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== HALAMAN PROFIL ===== */
+
+.profile-container {
+    display: flex;
+    min-height: 100vh;
+    background: #F4F7F5;
+}
+
+.profile-container .main-sidebar {
+    width: 250px !important;
+    min-width: 250px;
+    height: 100vh;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    background: #fff !important;
+    border-right: 1px solid #E5ECE8;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0;
+}
+
+.profile-content {
+    flex: 1;
+    min-width: 0;
+    padding: 35px 40px;
+    box-sizing: border-box;
+}
+
+.profile-header {
+    margin-bottom: 25px;
+}
+
+.profile-header h1 {
+    font-size: 27px;
+    color: #172B25;
+    margin: 0 0 5px;
+}
+
+.profile-header p {
+    color: #89958F;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Identitas nasabah */
+
+.profile-identity {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 23px;
+    background: #fff;
+    border: 1px solid #E8EEEA;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.identity-avatar {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    border-radius: 50%;
+    background: #D7F8E9;
+    color: #087653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.identity-info h2 {
+    color: #263B33;
+    font-size: 21px;
+    margin: 0 0 5px;
+}
+
+.identity-info p {
+    color: #89958F;
+    font-size: 13px;
+    margin: 0;
+}
+
+.identity-status {
+    margin-left: auto;
+    padding: 7px 13px;
+    background: #E9F9F1;
+    color: #087653;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+/* Kolom profil */
+
+.profile-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.profile-details,
+.profile-security {
+    background: #fff;
+    border: 1px solid #E8EEEA;
+    border-radius: 16px;
+    padding: 23px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.profile-details h2,
+.profile-security h2 {
+    color: #263B33;
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.profile-details > p,
+.profile-security > p {
+    color: #89958F;
+    font-size: 12px;
+    margin: 0 0 20px;
+}
+
+/* Form profil */
+
+.profile-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.profile-field-full {
+    grid-column: 1 / -1;
+}
+
+.profile-field label {
+    color: #52645B;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.profile-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #DCE5E0;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #34463E;
+    background: #fff;
+}
+
+.profile-field input:focus {
+    outline: none;
+    border-color: #087C5B;
+}
+
+.profile-field input[readonly] {
+    background: #F7F9F8;
+    color: #78857E;
+    cursor: not-allowed;
+}
+
+.profile-note {
+    display: block;
+    color: #89958F;
+    font-size: 11px;
+    margin-top: 17px;
+    line-height: 1.5;
+}
+
+.profile-save {
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #087C5B;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Keamanan */
+
+.security-card {
+    padding: 17px;
+    background: #F8FAF9;
+    border: 1px solid #E8EEEA;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.security-card strong {
+    color: #34463E;
+    font-size: 13px;
+}
+
+.security-card p {
+    color: #89958F;
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 8px 0 14px;
+}
+
+.security-card button {
+    width: 100%;
+    padding: 11px;
+    background: #fff;
+    border: 1px solid #DCE5E0;
+    border-radius: 9px;
+    color: #52645B;
+    font-weight: 600;
+}
+
+.security-card button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.security-note {
+    color: #89958F;
+    font-size: 10px;
+}
+
+.profile-alert {
+    background: #E9F9F1;
+    color: #087653;
+    padding: 13px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+/* Responsif */
+
+@media (max-width: 950px) {
+    .profile-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+
+    .profile-container .main-sidebar {
+        position: relative;
+        width: 100% !important;
+        min-width: 0;
+        height: auto;
+        min-height: auto;
+    }
+
+    .profile-content {
+        padding: 22px 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .profile-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-field-full {
+        grid-column: auto;
+    }
+
+    .profile-identity {
+        flex-wrap: wrap;
+    }
+
+    .identity-status {
+        margin-left: 0;
+    }
+}
+/* FORM UBAH PASSWORD */
+
+.password-form-card {
+    max-width: 550px;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #E8EEEA;
+    border-radius: 16px;
+}
+
+.password-form-card h2 {
+    color: #263B33;
+    font-size: 19px;
+    margin: 0 0 7px;
+}
+
+.password-form-card > p {
+    color: #89958F;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.password-form-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.password-form-card label {
+    font-size: 12px;
+    color: #52645B;
+    margin-bottom: 7px;
+}
+
+.password-form-card input {
+    padding: 13px;
+    border: 1px solid #DCE5E0;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 13px;
+}
+
+.password-form-card input:focus {
+    outline: none;
+    border-color: #087C5B;
+}
+
+.password-back {
+    text-align: center;
+    color: #087653;
+    font-size: 13px;
+    margin-top: 17px;
+    text-decoration: none;
+}
+
+.password-error {
+    background: #FFF0F0;
+    color: #B42318;
+}
+.security-action {
+    display: block;
+    text-align: center;
+    padding: 11px;
+    background: #fff;
+    border: 1px solid #DCE5E0;
+    border-radius: 9px;
+    color: #087653;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.identity-avatar {
+    overflow: hidden;
+}
+
+.upload-photo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-right: 20px;
+}
+
+.upload-photo-form input {
+    max-width: 220px;
+}
+
+.upload-photo-form small {
+    color: #777;
+    font-size: 12px;
+}
+
+.upload-photo-form button {
+    cursor: pointer;
+}
+/* =================================
+   PRINT / DOWNLOAD PDF TRANSAKSI
+================================= */
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 15mm;
+    }
+
+    body {
+        background: white !important;
+        color: #222 !important;
+        font-family: Arial, sans-serif !important;
+    }
+
+    .main-sidebar,
+    .sidebar,
+    .sidebar-menu,
+    .sidebar-bottom,
+    .no-print,
+    button,
+    .btn,
+    .print-button {
+        display: none !important;
+    }
+
+    .app-layout {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .main-content {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .transactions-header {
+        text-align: center !important;
+        margin-bottom: 25px !important;
+    }
+
+    .transactions-header h1 {
+        text-align: center !important;
+        font-size: 22px !important;
+    }
+
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 11px !important;
+    }
+
+    th, td {
+        border: 1px solid #ccc !important;
+        padding: 8px !important;
+        text-align: left !important;
+    }
+
+    tr {
+        page-break-inside: avoid !important;
+    }
+
+    * {
+        box-shadow: none !important;
+    }
+}
+.sidebar-profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
