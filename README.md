@@ -274,13 +274,13 @@ Dokumentasi tambahan proyek:
 
 | No. | Nama Anggota | NIM | Kontribusi |
 |---|---|---|---|
-| 1 | [Muhammad Ryza Mahameru] | [4525210048] | [Kontribusi] |
-| 2 | [Azzahra Navisha] | [4525210118] | [Kontribusi] |
-| 3 | [Muhammad Rian Ramadhan] | [4525210047] | [Kontribusi] |
-| 4 | [Muhammad Rava Alvriansyah] | [4525210040] | [Kontribusi] |
-| 5 | [Muhammad Faisal Athallah] | [4525210120] | [Kontribusi] |
-| 6 | [Delia Veriz Maureta] | [45252100119] | [Kontribusi] |
-| 7 | [Naufalino Ahmad Saputra] | [4525210139] | [Kontribusi] |
+| 1 | Muhammad Ryza Mahameru | 4525210048 | [Kontribusi] |
+| 2 | Azzahra Navisha | 4525210118 | [Kontribusi] |
+| 3 | Muhammad Rian Ramadhan | 4525210047 | [Kontribusi] |
+| 4 | Muhammad Rava Alvriansyah | 4525210040 | [Kontribusi] |
+| 5 | Muhammad Faisal Athallah | 4525210120 | [Kontribusi] |
+| 6 | Delia Veris Maureta | 45252100119 | [Kontribusi] |
+| 7 | Naufalino Ahmad Saputra | 4525210139 | [Kontribusi] |
 
 ---
 
