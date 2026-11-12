@@ -1,0 +1,2516 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f6;
+    color: #263b36;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #123d35;
+    color: white;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.brand-logo {
+    background: #ffffff;
+    color: #123d35;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.brand h2 {
+    font-size: 17px;
+}
+
+.brand small {
+    color: #b8d4cc;
+}
+
+.menu-label {
+    font-size: 11px;
+    color: #a9c6bd;
+    margin-bottom: 15px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar nav a,
+.logout {
+    color: #dce9e5;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #267b68;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 5px;
+    border-top: 1px solid #42645b;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #d8eee6;
+    color: #123d35;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.admin-info strong,
+.admin-info small {
+    display: block;
+    font-size: 12px;
+}
+
+.admin-info small {
+    color: #b8d4cc;
+    margin-top: 4px;
+}
+
+.logout {
+    display: block;
+    background: #8c3737;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.topbar p,
+.welcome p {
+    color: #71817b;
+    font-size: 14px;
+}
+
+.admin-badge {
+    background: #d9eee6;
+    color: #17634f;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.welcome {
+    background: #176b59;
+    color: white;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #d5e9e2;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.stat-card,
+.information {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+}
+
+.stat-card span {
+    color: #74847d;
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    font-size: 25px;
+    margin: 15px 0 8px;
+    color: #176b59;
+    overflow-wrap: anywhere;
+}
+
+.stat-card small {
+    color: #91a099;
+}
+
+.information {
+    margin-top: 25px;
+}
+
+.information h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.information p {
+    color: #71817b;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+@media (max-width: 750px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ================================
+   HALAMAN DATA NASABAH
+================================ */
+
+.nasabah-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 280px);
+    margin-bottom: 25px;
+}
+
+.nasabah-summary > div {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+    border-left: 4px solid #176b59;
+}
+
+.nasabah-summary span {
+    color: #74847d;
+    font-size: 14px;
+}
+
+.nasabah-summary h2 {
+    color: #176b59;
+    font-size: 28px;
+    margin: 12px 0 8px;
+}
+
+.nasabah-summary small {
+    color: #91a099;
+    font-size: 12px;
+}
+
+.nasabah-table-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+    min-width: 0;
+}
+
+.nasabah-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.nasabah-table-header h2 {
+    font-size: 18px;
+    color: #263b36;
+    margin-bottom: 8px;
+}
+
+.nasabah-table-header p {
+    font-size: 13px;
+    color: #71817b;
+}
+
+.nasabah-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nasabah-search input {
+    width: 260px;
+    max-width: 100%;
+    padding: 11px 13px;
+    border: 1px solid #dce5e1;
+    border-radius: 7px;
+    outline: none;
+    font-size: 13px;
+}
+
+.nasabah-search input:focus {
+    border-color: #176b59;
+}
+
+.nasabah-search button {
+    padding: 11px 18px;
+    background: #176b59;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.nasabah-search button:hover {
+    background: #123d35;
+}
+
+.nasabah-search a {
+    color: #a34444;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.nasabah-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.nasabah-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+.nasabah-table th {
+    background: #f1f6f3;
+    color: #42645b;
+    text-align: left;
+    padding: 15px 13px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.nasabah-table td {
+    padding: 15px 13px;
+    border-bottom: 1px solid #edf1ef;
+    color: #52645d;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.nasabah-table tbody tr:hover {
+    background: #f8fbf9;
+}
+
+.nasabah-table td strong {
+    color: #263b36;
+}
+
+.nasabah-table .empty-data {
+    text-align: center;
+    padding: 35px;
+    color: #91a099;
+}
+
+@media (max-width: 750px) {
+    .nasabah-table-card {
+        padding: 18px;
+    }
+
+    .nasabah-table-header {
+        align-items: flex-start;
+    }
+
+    .nasabah-search {
+        width: 100%;
+    }
+
+    .nasabah-search input {
+        flex: 1;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nasabah-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .nasabah-search input {
+        min-width: 100%;
+    }
+}
+
+/* HALAMAN DATA REKENING */
+
+.rekening-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.rekening-table-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+    min-width: 0;
+}
+
+.rekening-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.rekening-table-header h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.rekening-table-header p {
+    color: #71817b;
+    font-size: 13px;
+}
+
+.status-form {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.status-form select {
+    padding: 8px;
+    border: 1px solid #dce5e1;
+    border-radius: 6px;
+    color: #263b36;
+    background: white;
+}
+
+.status-form button {
+    padding: 9px 12px;
+    background: #176b59;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.status-form button:hover {
+    background: #123d35;
+}
+
+.status-rekening {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #e1f2e9;
+    color: #176b59;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rekening-message {
+    background: #e1f2e9;
+    color: #176b59;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+@media (max-width: 750px) {
+    .rekening-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .rekening-table-card {
+        padding: 18px;
+    }
+}
+
+/* ================================
+   HALAMAN TRANSAKSI ADMIN
+================================ */
+
+.transaksi-masuk,
+.transaksi-keluar {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.transaksi-masuk {
+    background: #e1f2e9;
+    color: #176b59;
+}
+
+.transaksi-keluar {
+    background: #fdeaea;
+    color: #a34444;
+}
+
+.rekening-table-card .nasabah-table {
+    min-width: 1050px;
+}
+
+@media (max-width: 750px) {
+    .rekening-table-card {
+        padding: 18px;
+    }
+}
+
+/* ================================
+   HALAMAN LAPORAN ADMIN
+================================ */
+
+.laporan-filter,
+.laporan-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+    margin-bottom: 25px;
+}
+
+.laporan-filter form {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.laporan-filter form div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.laporan-filter label {
+    font-size: 13px;
+    color: #52645d;
+    font-weight: bold;
+}
+
+.laporan-filter input {
+    padding: 11px;
+    border: 1px solid #dce5e1;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.laporan-filter button,
+.laporan-header button {
+    background: #176b59;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 17px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.laporan-filter button:hover,
+.laporan-header button:hover {
+    background: #123d35;
+}
+
+.laporan-filter a {
+    color: #a34444;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.laporan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.laporan-header h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.laporan-header p {
+    color: #71817b;
+    font-size: 13px;
+}
+
+.laporan-card .nasabah-table {
+    min-width: 1050px;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .sidebar,
+    .topbar,
+    .laporan-filter,
+    .laporan-header button {
+        display: none !important;
+    }
+
+    .admin-layout {
+        display: block;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    .laporan-card {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .laporan-header {
+        display: block;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .laporan-header p {
+        margin-top: 8px;
+    }
+
+    .nasabah-table {
+        min-width: 0 !important;
+        width: 100%;
+    }
+
+    .nasabah-table th,
+    .nasabah-table td {
+        font-size: 9px;
+        padding: 7px 5px;
+    }
+}
+
+@media (max-width: 750px) {
+    .laporan-filter,
+    .laporan-card {
+        padding: 18px;
+    }
+
+    .laporan-filter form {
+        align-items: stretch;
+    }
+}
+/* PERBAIKAN BRAND SIDEBAR ADMIN */
+
+.brand {
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.brand-text h2 {
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+.brand-text small {
+    color: #b8d4cc;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.brand-text span {
+    color: #b8d4cc;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+/* =================================
+   SIDEBAR ADMIN - DESAIN BARU
+================================= */
+
+.admin-sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #ffffff;
+    color: #263b36;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-right: 1px solid #e5eeea;
+}
+
+/* BRAND */
+
+.admin-sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.admin-sidebar-logo {
+    background: #176b59;
+    color: #ffffff;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.admin-sidebar-brand h2 {
+    font-size: 17px;
+    color: #176b59;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* LABEL */
+
+.admin-sidebar-label {
+    font-size: 11px;
+    color: #91a099;
+    font-weight: bold;
+    margin: 0 10px 15px;
+}
+
+/* MENU */
+
+.admin-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #40564d;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.admin-sidebar-menu a:hover,
+.admin-sidebar-menu a.active {
+    background: #e6f6ef;
+    color: #176b59;
+}
+
+.admin-sidebar-menu a.active {
+    font-weight: bold;
+}
+
+.admin-menu-dot {
+    width: 8px;
+    height: 8px;
+    background: #cbd7d0;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.admin-sidebar-menu a.active .admin-menu-dot {
+    background: #176b59;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+    .admin-sidebar {
+        width: 190px;
+    }
+}
+
+@media (max-width: 520px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .admin-sidebar-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.admin-sidebar-brand small {
+    display: block;
+    color: #91a099;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* =================================
+   SIDEBAR ADMIN - BANK IMAN SYARIAH
+================================= */
+
+.admin-layout > .sidebar {
+    width: 268px;
+    min-width: 268px;
+    min-height: 100vh;
+    background: #ffffff;
+    color: #263b36;
+    padding: 38px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e8efeb;
+}
+
+/* BRAND */
+
+.sidebar .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 72px;
+    padding: 0;
+}
+
+.sidebar .brand-logo {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    background: #087c59;
+    color: #ffffff;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.sidebar .brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sidebar .brand-text h2 {
+    color: #087c59;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.sidebar .brand-text small {
+    color: #8b9b94;
+    font-size: 12px;
+}
+
+/* LABEL MENU */
+
+.sidebar .menu-label {
+    color: #a4b1ab;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 15px 10px;
+}
+
+/* MENU */
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 14px;
+    border-radius: 11px;
+    color: #40564d;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+/* BULLET MENU */
+
+.sidebar nav a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    border-radius: 50%;
+    background: #cbd8d0;
+}
+
+/* HOVER DAN MENU AKTIF */
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #e6f6ef;
+    color: #087c59;
+    font-weight: 700;
+}
+
+.sidebar nav a:hover::before,
+.sidebar nav a.active::before {
+    background: #087c59;
+}
+
+/* BAGIAN BAWAH */
+
+.sidebar .sidebar-bottom {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.sidebar .logout {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #fff0f0;
+    color: #bd4545;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar .logout:hover {
+    background: #ffe3e3;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .admin-layout > .sidebar {
+        width: 220px;
+        min-width: 220px;
+        padding: 25px 14px;
+    }
+
+    .sidebar .brand-text h2 {
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   SIDEBAR ADMIN - BANK IMAN SYARIAH
+   ========================================= */
+
+.admin-main-sidebar {
+    width: 260px;
+    min-width: 260px;
+    min-height: 100vh;
+    background: #ffffff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e8efeb;
+    color: #263b36;
+}
+
+/* BRAND */
+
+.admin-main-sidebar .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 65px;
+}
+
+.sidebar-brand-logo {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    border-radius: 13px;
+    background: #087c59;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.admin-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.admin-brand-text h2 {
+    margin: 0;
+    color: #087c59;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.admin-brand-text small {
+    color: #91a099;
+    font-size: 12px;
+}
+
+/* LABEL */
+
+.admin-main-sidebar .sidebar-label {
+    margin: 0 0 15px 10px;
+    color: #a4b1ab;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* MENU */
+
+.admin-main-sidebar .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-main-sidebar .sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #40564d;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.admin-main-sidebar .menu-dot {
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    border-radius: 50%;
+    background: #cbd8d0;
+}
+
+.admin-main-sidebar .sidebar-menu a:hover,
+.admin-main-sidebar .sidebar-menu a.active {
+    background: #e6f6ef;
+    color: #087c59;
+    font-weight: 700;
+}
+
+.admin-main-sidebar .sidebar-menu a.active .menu-dot,
+.admin-main-sidebar .sidebar-menu a:hover .menu-dot {
+    background: #087c59;
+}
+
+/* BAGIAN BAWAH */
+
+.admin-main-sidebar .sidebar-bottom {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.admin-main-sidebar .sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e8efeb;
+}
+
+.admin-main-sidebar .profile-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #e6f6ef;
+    color: #087c59;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.admin-main-sidebar .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.admin-main-sidebar .profile-info strong {
+    font-size: 13px;
+    color: #263b36;
+}
+
+.admin-main-sidebar .profile-info span {
+    font-size: 11px;
+    color: #91a099;
+}
+
+.admin-main-sidebar .sidebar-logout {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 9px;
+    background: #fff0f0;
+    color: #bd4545;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-main-sidebar .sidebar-logout:hover {
+    background: #ffe3e3;
+}
+
+/* =====================================
+   DATA REKENING ADMIN
+===================================== */
+
+.rekening-content {
+    min-width: 0;
+}
+
+.rekening-alert {
+    background: #e6f6ef;
+    color: #087c59;
+    border: 1px solid #c9eadb;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+/* STATISTIK */
+
+.rekening-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.rekening-stat-card {
+    background: #ffffff;
+    border: 1px solid #e8efeb;
+    border-radius: 14px;
+    padding: 23px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    box-shadow: 0 3px 12px rgba(20, 60, 45, 0.04);
+}
+
+.rekening-stat-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: #e6f6ef;
+    color: #087c59;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.rekening-stat-card span {
+    color: #718078;
+    font-size: 13px;
+}
+
+.rekening-stat-card h2 {
+    color: #263b36;
+    font-size: 23px;
+    margin: 6px 0;
+}
+
+.rekening-stat-card small {
+    color: #98a69f;
+    font-size: 12px;
+}
+
+/* PANEL TABEL */
+
+.rekening-panel {
+    background: #ffffff;
+    border: 1px solid #e8efeb;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(20, 60, 45, 0.04);
+}
+
+.rekening-panel-header {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.rekening-panel-header h2 {
+    color: #263b36;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.rekening-panel-header p {
+    color: #91a099;
+    font-size: 13px;
+}
+
+/* PENCARIAN */
+
+.rekening-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rekening-search input {
+    width: 250px;
+    padding: 11px 13px;
+    border: 1px solid #dce6df;
+    border-radius: 8px;
+    outline: none;
+    font-size: 13px;
+}
+
+.rekening-search input:focus {
+    border-color: #087c59;
+}
+
+.rekening-search button,
+.rekening-status-form button {
+    border: none;
+    background: #087c59;
+    color: #ffffff;
+    padding: 11px 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.rekening-search button:hover,
+.rekening-status-form button:hover {
+    background: #066447;
+}
+
+.rekening-search a {
+    color: #087c59;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* TABEL */
+
+.rekening-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.rekening-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 950px;
+}
+
+.rekening-table th {
+    background: #f7faf8;
+    color: #718078;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    padding: 16px;
+    white-space: nowrap;
+}
+
+.rekening-table td {
+    padding: 16px;
+    border-bottom: 1px solid #edf1ee;
+    color: #40564d;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.rekening-table tbody tr:hover {
+    background: #fbfdfc;
+}
+
+.rekening-table td strong {
+    color: #263b36;
+}
+
+.rekening-saldo {
+    color: #087c59 !important;
+    font-weight: 700;
+}
+
+/* STATUS */
+
+.rekening-status {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-aktif {
+    background: #e6f6ef;
+    color: #087c59;
+}
+
+.status-nonaktif {
+    background: #fff5df;
+    color: #a87516;
+}
+
+.status-diblokir {
+    background: #ffeded;
+    color: #c34444;
+}
+
+/* FORM UBAH STATUS */
+
+.rekening-status-form {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.rekening-status-form select {
+    padding: 9px;
+    border: 1px solid #dce6df;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #40564d;
+    font-size: 12px;
+    outline: none;
+}
+
+.rekening-status-form button {
+    padding: 9px 12px;
+    font-size: 12px;
+}
+
+/* DATA KOSONG */
+
+.rekening-empty {
+    text-align: center;
+    padding: 40px !important;
+    color: #98a69f !important;
+}
+
+/* FOOTER */
+
+.rekening-panel-footer {
+    padding: 16px 22px;
+    color: #91a099;
+    font-size: 12px;
+    border-top: 1px solid #edf1ee;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .rekening-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .rekening-panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rekening-search {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .rekening-search input {
+        flex: 1;
+        min-width: 180px;
+    }
+}
+
+/* =====================================
+   HALAMAN SETOR TUNAI ADMIN
+===================================== */
+
+.setor-content {
+    min-width: 0;
+}
+
+/* RINGKASAN */
+
+.setor-summary {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    background: #ffffff;
+    border: 1px solid #e8efeb;
+    border-radius: 14px;
+    padding: 22px;
+    margin: 25px 0;
+    max-width: 380px;
+    box-shadow: 0 3px 12px rgba(20, 60, 45, 0.04);
+}
+
+.setor-summary-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #e6f6ef;
+    color: #087c59;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.setor-summary span {
+    color: #718078;
+    font-size: 13px;
+}
+
+.setor-summary h2 {
+    margin: 5px 0;
+    color: #263b36;
+    font-size: 24px;
+}
+
+.setor-summary small {
+    color: #98a69f;
+    font-size: 12px;
+}
+
+/* PESAN */
+
+.setor-alert {
+    max-width: 720px;
+    padding: 15px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.setor-alert.success {
+    background: #e6f6ef;
+    color: #087c59;
+    border: 1px solid #c9eadb;
+}
+
+.setor-alert.error {
+    background: #fff0f0;
+    color: #bd4545;
+    border: 1px solid #f3d1d1;
+}
+
+/* PANEL FORM */
+
+.setor-panel {
+    max-width: 720px;
+    background: #ffffff;
+    border: 1px solid #e8efeb;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(20, 60, 45, 0.04);
+}
+
+.setor-panel-header {
+    padding: 24px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.setor-panel-header h2 {
+    color: #263b36;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.setor-panel-header p {
+    color: #91a099;
+    font-size: 13px;
+}
+
+/* FORM */
+
+.setor-form {
+    padding: 25px;
+}
+
+.setor-field {
+    margin-bottom: 23px;
+}
+
+.setor-field label {
+    display: block;
+    margin-bottom: 9px;
+    color: #344b41;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.setor-field input,
+.setor-field select,
+.setor-field textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #dce6df;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #263b36;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.setor-field input:focus,
+.setor-field select:focus,
+.setor-field textarea:focus {
+    border-color: #087c59;
+    box-shadow: 0 0 0 3px rgba(8, 124, 89, 0.08);
+}
+
+.setor-field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.setor-field small {
+    display: block;
+    margin-top: 8px;
+    color: #98a69f;
+    font-size: 12px;
+}
+
+/* INPUT NOMINAL */
+
+.setor-input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dce6df;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.setor-input-group:focus-within {
+    border-color: #087c59;
+    box-shadow: 0 0 0 3px rgba(8, 124, 89, 0.08);
+}
+
+.setor-input-group span {
+    padding: 13px 15px;
+    background: #f5f9f6;
+    color: #087c59;
+    font-weight: 700;
+    border-right: 1px solid #dce6df;
+}
+
+.setor-input-group input {
+    border: none;
+    border-radius: 0;
+    box-shadow: none !important;
+}
+
+/* TOMBOL */
+
+.setor-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #edf1ee;
+}
+
+.setor-reset-button,
+.setor-submit-button {
+    padding: 12px 19px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.setor-reset-button {
+    background: #f0f4f1;
+    color: #52645a;
+}
+
+.setor-reset-button:hover {
+    background: #e5ebe7;
+}
+
+.setor-submit-button {
+    background: #087c59;
+    color: #ffffff;
+}
+
+.setor-submit-button:hover {
+    background: #066447;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .setor-panel {
+        width: 100%;
+    }
+
+    .setor-form {
+        padding: 18px;
+    }
+
+    .setor-form-footer {
+        flex-direction: column-reverse;
+    }
+
+    .setor-reset-button,
+    .setor-submit-button {
+        width: 100%;
+    }
+}
+
+/* =================================
+   TRANSFER ADMIN
+================================= */
+
+.transfer-content {
+    padding-bottom: 35px;
+}
+
+.transfer-header {
+    margin-bottom: 25px;
+}
+
+.transfer-header h1 {
+    color: #20352c;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.transfer-header p {
+    color: #7a8981;
+    font-size: 14px;
+}
+
+.transfer-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.transfer-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    background: #ffffff;
+    padding: 23px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.transfer-card-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #e6f5ed;
+    color: #087957;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.transfer-card p {
+    color: #77867e;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.transfer-card h2 {
+    color: #087957;
+    font-size: 23px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.transfer-card span {
+    color: #9aa59f;
+    font-size: 12px;
+}
+
+.transfer-panel {
+    background: #ffffff;
+    border-radius: 13px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.transfer-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.transfer-panel-header h3 {
+    color: #263b32;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.transfer-panel-header p {
+    color: #89958e;
+    font-size: 13px;
+}
+
+.transfer-total {
+    background: #e6f5ed;
+    color: #087957;
+    padding: 9px 13px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.transfer-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.transfer-table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+.transfer-table th,
+.transfer-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #edf1ee;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.transfer-table th {
+    color: #64746b;
+    background: #f5f8f6;
+    font-weight: 600;
+}
+
+.transfer-table td {
+    color: #53645a;
+}
+
+.transfer-table tbody tr:hover {
+    background: #f9fcfa;
+}
+
+.transfer-table td strong {
+    color: #087957;
+}
+
+.transfer-nominal {
+    color: #087957 !important;
+    font-weight: 600;
+}
+
+.transfer-badge {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #e3f5ed;
+    color: #087957;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.transfer-empty {
+    text-align: center !important;
+    padding: 35px !important;
+    color: #89958e !important;
+}
+
+@media (max-width: 900px) {
+    .transfer-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .transfer-panel {
+        padding: 15px;
+    }
+
+    .transfer-panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .transfer-card {
+        padding: 18px;
+    }
+}
+
+/* =================================
+   TRANSAKSI ADMIN
+================================= */
+
+.transaksi-content {
+    padding-bottom: 35px;
+}
+
+.transaksi-header {
+    margin-bottom: 25px;
+}
+
+.transaksi-header h1 {
+    color: #20352c;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.transaksi-header p {
+    color: #7a8981;
+    font-size: 14px;
+}
+
+.transaksi-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.transaksi-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    min-width: 0;
+}
+
+.transaksi-stat-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #e6f5ed;
+    color: #087957;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.transaksi-stat-card p {
+    color: #77867e;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.transaksi-stat-card h2 {
+    color: #087957;
+    font-size: 21px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.transaksi-stat-card span {
+    color: #9aa59f;
+    font-size: 11px;
+}
+
+.transaksi-panel {
+    background: #ffffff;
+    border-radius: 13px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.transaksi-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.transaksi-panel-header h3 {
+    color: #263b32;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.transaksi-panel-header p {
+    color: #89958e;
+    font-size: 13px;
+}
+
+.transaksi-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transaksi-search input {
+    width: 260px;
+    padding: 11px 13px;
+    border: 1px solid #e0e8e2;
+    border-radius: 8px;
+    outline: none;
+    font-size: 12px;
+}
+
+.transaksi-search input:focus {
+    border-color: #087957;
+}
+
+.transaksi-search button {
+    border: none;
+    background: #087957;
+    color: #ffffff;
+    padding: 11px 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.transaksi-search button:hover {
+    background: #066548;
+}
+
+.transaksi-search a {
+    color: #087957;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.transaksi-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.transaksi-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+.transaksi-table th,
+.transaksi-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #edf1ee;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.transaksi-table th {
+    background: #f5f8f6;
+    color: #64746b;
+    font-weight: 600;
+}
+
+.transaksi-table td {
+    color: #53645a;
+}
+
+.transaksi-table tbody tr:hover {
+    background: #f9fcfa;
+}
+
+.transaksi-kode {
+    color: #087957;
+}
+
+.transaksi-nominal {
+    color: #263b32 !important;
+    font-weight: 600;
+}
+
+.transaksi-badge-masuk,
+.transaksi-badge-keluar {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.transaksi-badge-masuk {
+    background: #e3f5ed;
+    color: #087957;
+}
+
+.transaksi-badge-keluar {
+    background: #fff0e9;
+    color: #d46b35;
+}
+
+.transaksi-empty {
+    text-align: center !important;
+    padding: 35px !important;
+    color: #89958e !important;
+}
+
+@media (max-width: 1100px) {
+    .transaksi-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .transaksi-panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .transaksi-search {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .transaksi-search input {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .transaksi-panel {
+        padding: 15px;
+    }
+
+    .transaksi-stat-card {
+        padding: 17px;
+    }
+}
+
+/* =================================
+   LAPORAN ADMIN
+================================= */
+
+.laporan-content {
+    padding-bottom: 35px;
+}
+
+.laporan-page-header {
+    margin-bottom: 25px;
+}
+
+.laporan-page-header h1 {
+    color: #20352c;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.laporan-page-header p {
+    color: #7a8981;
+    font-size: 14px;
+}
+
+/* FILTER */
+
+.laporan-filter {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 13px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.laporan-filter form {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.laporan-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.laporan-filter-field label {
+    color: #53645a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.laporan-filter-field input {
+    padding: 11px 13px;
+    border: 1px solid #e0e8e2;
+    border-radius: 8px;
+    outline: none;
+    color: #53645a;
+    font-size: 13px;
+}
+
+.laporan-filter-field input:focus {
+    border-color: #087957;
+}
+
+.laporan-filter-button,
+.laporan-reset-button {
+    padding: 11px 17px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.laporan-filter-button {
+    border: none;
+    background: #087957;
+    color: #ffffff;
+}
+
+.laporan-filter-button:hover {
+    background: #066548;
+}
+
+.laporan-reset-button {
+    background: #f1f5f2;
+    color: #53645a;
+}
+
+/* STATISTIK */
+
+.laporan-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.laporan-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    min-width: 0;
+}
+
+.laporan-stat-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e6f5ed;
+    color: #087957;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.laporan-stat-card p {
+    color: #77867e;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.laporan-stat-card h2 {
+    color: #087957;
+    font-size: 21px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.laporan-stat-card span {
+    color: #9aa59f;
+    font-size: 11px;
+}
+
+/* PANEL LAPORAN */
+
+.laporan-panel {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.laporan-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.laporan-panel-header h3 {
+    color: #263b32;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.laporan-panel-header p {
+    color: #89958e;
+    font-size: 13px;
+}
+
+.laporan-print-button {
+    background: #087957;
+    color: #ffffff;
+    border: none;
+    padding: 11px 17px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.laporan-print-button:hover {
+    background: #066548;
+}
+
+/* TABEL */
+
+.laporan-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.laporan-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+.laporan-table th,
+.laporan-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #edf1ee;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.laporan-table th {
+    color: #64746b;
+    background: #f5f8f6;
+    font-weight: 600;
+}
+
+.laporan-table td {
+    color: #53645a;
+}
+
+.laporan-table tbody tr:hover {
+    background: #f9fcfa;
+}
+
+.laporan-empty {
+    text-align: center !important;
+    padding: 35px !important;
+    color: #89958e !important;
+}
+
+/* JUDUL KHUSUS CETAK */
+
+.laporan-print-heading {
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .laporan-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .laporan-panel {
+        padding: 15px;
+    }
+
+    .laporan-panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .laporan-filter form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .laporan-filter-field input {
+        width: 100%;
+    }
+
+    .laporan-stat-card {
+        padding: 17px;
+    }
+}
+
+/* =================================
+   CETAK LAPORAN
+================================= */
+
+@media print {
+
+    @page {
+        size: landscape;
+        margin: 15mm;
+    }
+
+    body {
+        background: #ffffff !important;
+        color: #222222 !important;
+    }
+
+    .admin-sidebar,
+    .main-sidebar,
+    .sidebar,
+    .laporan-page-header,
+    .laporan-filter,
+    .laporan-stats,
+    .laporan-panel-header,
+    .laporan-print-button {
+        display: none !important;
+    }
+
+    .admin-layout {
+        display: block !important;
+    }
+
+    .main-content,
+    .laporan-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .laporan-panel {
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    .laporan-print-heading {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        color: #222222 !important;
+    }
+
+    .laporan-print-heading h2 {
+        font-size: 20px;
+        margin-bottom: 7px;
+    }
+
+    .laporan-print-heading h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .laporan-print-heading p {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .laporan-table-wrapper {
+        overflow: visible !important;
+    }
+
+    .laporan-table {
+        width: 100% !important;
+        min-width: 0 !important;
+        border-collapse: collapse !important;
+    }
+
+    .laporan-table th,
+    .laporan-table td {
+        padding: 8px 6px !important;
+        border: 1px solid #cccccc !important;
+        color: #222222 !important;
+        font-size: 9px !important;
+        white-space: normal !important;
+    }
+
+    .laporan-table th {
+        background: #eeeeee !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .laporan-table tbody tr {
+        break-inside: avoid;
+    }
+}
+/* NOTIFIKASI PENGAJUAN PEMBIAYAAN */
+
+.pengajuan-alert {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background: #e8f7ee;
+    border: 1px solid #b7e4c7;
+    border-left: 4px solid #16a34a;
+    border-radius: 10px;
+    color: #166534;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* TOMBOL AKSI PENGAJUAN */
+
+.pengajuan-action-form {
+    display: inline-block;
+    margin: 2px;
+}
+
+.btn-setujui,
+.btn-tolak {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-setujui {
+    background: #16a34a;
+    color: white;
+}
+
+.btn-setujui:hover {
+    background: #15803d;
+}
+
+.btn-tolak {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-tolak:hover {
+    background: #fecaca;
+}

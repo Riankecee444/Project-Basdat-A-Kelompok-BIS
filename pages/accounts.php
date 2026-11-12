@@ -161,10 +161,18 @@ mysqli_stmt_close($stmt);
                                 </a>
                             </div>
 
-                            <div class="account-cash-actions">
-                                <a href="setor_tunai.php">Setor tunai</a>
-                                <a href="tarik_tunai.php">Tarik tunai</a>
-                            </div>
+                        <div class="account-cash-actions">
+    <a href="setor_tunai.php">Setor tunai</a>
+
+    <a href="tarik_tunai.php">Tarik tunai</a>
+
+    <?php if (strtolower(trim($r["status"])) === "aktif"): ?>
+        <a href="transfer.php?rekening_id=<?= (int) $r["id"]; ?>"
+           class="transfer-account-button">
+            Transfer
+        </a>
+    <?php endif; ?>
+</div>
 
                         </div>
 

@@ -1,181 +1,296 @@
-# BANK IMAN SYARIAH
+# 🏦 BANK IMAN SYARIAH
+### Aplikasi Internet Banking Berbasis Web
 
-**Aplikasi M-Banking Berbasis Web dengan Sistem Perbankan Syariah**
+Bank Iman Syariah merupakan aplikasi perbankan berbasis web yang dikembangkan untuk menyediakan layanan perbankan digital dengan konsep perbankan syariah.
 
-## 1. Deskripsi Proyek
+Aplikasi ini memiliki dua jenis pengguna, yaitu Nasabah dan Admin. Nasabah dapat mengakses informasi rekening, transaksi, transfer, pembiayaan, zakat, dan profil. Admin dapat mengelola data nasabah, rekening, transaksi, serta pengajuan pembiayaan.
 
-Bank Iman Syariah merupakan aplikasi M-Banking berbasis web yang dikembangkan untuk menyediakan layanan informasi perbankan syariah secara digital.
+---
 
-Aplikasi ini dibuat menggunakan PHP Native dan MySQL dengan fitur pengelolaan informasi rekening, transaksi, pembiayaan, pembayaran zakat, serta profil pengguna.
+## 📌 Fitur Aplikasi
 
-Proyek ini juga dilengkapi REST API untuk menyediakan akses data dalam format JSON dengan sistem autentikasi Bearer Token.
+### 1. Fitur Nasabah
+- Login dan autentikasi pengguna.
+- Dashboard informasi saldo.
+- Melihat data rekening.
+- Melihat riwayat transaksi.
+- Transfer antar rekening.
+- Setor tunai melalui layanan admin.
+- Mengajukan pembiayaan.
+- Melihat status pengajuan pembiayaan.
+- Melihat informasi pembiayaan aktif.
+- Informasi dan riwayat pembayaran zakat.
+- Mengelola profil dan foto pengguna.
 
-## 2. Tujuan Proyek
+### 2. Fitur Admin
+- Dashboard admin.
+- Mengelola data nasabah.
+- Mengelola data rekening.
+- Mengelola setor tunai.
+- Mengelola transfer.
+- Melihat data transaksi.
+- Melihat laporan transaksi.
+- Melihat pengajuan pembiayaan.
+- Menyetujui atau menolak pengajuan pembiayaan.
 
-- Menerapkan konsep pengembangan aplikasi berbasis web.
-- Mengembangkan sistem frontend dan backend.
-- Mengelola data menggunakan database MySQL.
-- Mengimplementasikan REST API.
-- Menerapkan autentikasi dan keamanan akses pengguna.
+### 3. REST API
+REST API digunakan untuk menghubungkan aplikasi dengan database melalui format JSON.
 
-## 3. Fitur Aplikasi
-
-| No. | Fitur | Keterangan |
-|---|---|---|
-| 1 | Login | Autentikasi pengguna |
-| 2 | Dashboard | Informasi saldo dan transaksi terbaru |
-| 3 | Rekening | Informasi nomor rekening, akad, dan saldo |
-| 4 | Transaksi | Riwayat transaksi masuk dan keluar |
-| 5 | Pembiayaan | Informasi pembiayaan syariah |
-| 6 | Zakat | Informasi dan riwayat pembayaran zakat |
-| 7 | Profil | Informasi dan pengelolaan profil pengguna |
-| 8 | REST API | Layanan pertukaran data menggunakan JSON |
-
-## 4. Teknologi yang Digunakan
-
-- HTML
-- CSS
-- PHP Native
-- MySQL
-- XAMPP
-- REST API
-- JSON
-- Postman
-- Visual Studio Code
-- Figma
-
-## 5. Struktur Folder
-
-    bank_iman_syariah/
-    ├── api/
-    │   ├── config.php
-    │   ├── auth.php
-    │   ├── test.php
-    │   ├── login.php
-    │   ├── dashboard.php
-    │   ├── accounts.php
-    │   ├── transactions.php
-    │   ├── financing.php
-    │   ├── zakat.php
-    │   └── profile.php
-    ├── assets/
-    │   └── css/
-    │       └── style.css
-    ├── auth/
-    │   └── login.php
-    ├── config/
-    │   └── database.php
-    ├── database/
-    ├── docs/
-    │   └── API_DOCUMENTATION.md
-    ├── includes/
-    │   └── sidebar.php
-    ├── pages/
-    │   ├── dashboard.php
-    │   ├── accounts.php
-    │   ├── transactions.php
-    │   ├── financing.php
-    │   ├── zakat.php
-    │   └── profile.php
-    ├── index.php
-    └── README.md
-
-## 6. Persyaratan Menjalankan Aplikasi
-
-- PHP
-- MySQL
-- XAMPP
-- Web Browser
-- Visual Studio Code (opsional)
-
-## 7. Cara Instalasi dan Menjalankan Aplikasi
-
-1. Download atau clone repository proyek.
-2. Pindahkan folder proyek ke direktori `htdocs`.
-3. Buka aplikasi XAMPP.
-4. Jalankan Apache dan MySQL.
-5. Buka phpMyAdmin.
-6. Buat database dengan nama `bank_iman_syariah`.
-7. Import file database proyek.
-8. Sesuaikan konfigurasi database pada `config/database.php`.
-9. Buka browser.
-10. Akses alamat berikut:
-
-    http://localhost/bank_iman_syariah/
-
-## 8. Akun Demo
-
-| Keterangan | Data |
-|---|---|
-| Nama | Rian Pratama |
-| Username | rian |
-| Password | rian123 |
-
-Catatan: Akun demo hanya digunakan untuk pengujian lokal.
-
-## 9. Dokumentasi REST API
-
-REST API digunakan untuk mengakses data aplikasi melalui endpoint dengan format JSON.
-
-Dokumentasi lengkap API tersedia pada:
-
-`docs/API_DOCUMENTATION.md`
-
-### Daftar Endpoint
+Endpoint API yang tersedia:
 
 | No. | Endpoint | Method | Fungsi |
 |---|---|---|---|
-| 1 | `/api/test.php` | GET | Menguji koneksi API |
-| 2 | `/api/login.php` | POST | Login dan mendapatkan token |
-| 3 | `/api/dashboard.php` | GET | Mengambil data dashboard |
-| 4 | `/api/accounts.php` | GET | Mengambil data rekening |
-| 5 | `/api/transactions.php` | GET | Mengambil data transaksi |
-| 6 | `/api/financing.php` | GET | Mengambil data pembiayaan |
-| 7 | `/api/zakat.php` | GET | Mengambil data zakat |
-| 8 | `/api/profile.php` | GET | Mengambil data profil |
+| 1 | `login.php` | POST | Login pengguna |
+| 2 | `dashboard.php` | GET | Data dashboard |
+| 3 | `accounts.php` | GET | Data rekening |
+| 4 | `transactions.php` | GET | Riwayat transaksi |
+| 5 | `financing.php` | GET | Data pembiayaan |
+| 6 | `zakat.php` | GET | Data zakat |
+| 7 | `profile.php` | GET | Data profil |
+| 8 | `test.php` | GET | Pengujian koneksi API |
 
-### Autentikasi API
+Dokumentasi lengkap API tersedia di:
 
-Endpoint data pengguna menggunakan Bearer Token.
+`docs/API_DOCUMENTATION.md`
 
-Format header:
+---
 
-    Authorization: Bearer TOKEN_ANDA
+## 🛠️ Teknologi yang Digunakan
 
-Token diperoleh melalui endpoint login dan memiliki masa berlaku 24 jam.
+| Teknologi | Kegunaan |
+|---|---|
+| PHP Native | Backend aplikasi |
+| MySQL | Database |
+| HTML | Struktur halaman |
+| CSS | Desain antarmuka |
+| JavaScript | Interaksi halaman |
+| REST API | Komunikasi data |
+| JSON | Format pertukaran data |
+| XAMPP | Server lokal |
+| Postman | Pengujian API |
+| Visual Studio Code | Editor kode |
 
-## 10. Pengujian API
+---
 
-Pengujian dilakukan menggunakan Postman dengan beberapa skenario:
+## 📂 Struktur Folder
 
-- Menguji koneksi API dan database.
-- Menguji login pengguna.
-- Menguji pengambilan data setiap endpoint.
-- Menguji akses tanpa token.
-- Menguji penggunaan token palsu.
-- Menguji masa berlaku token.
+```text
+bank_iman_syariah/
+│
+├── api/
+│   ├── accounts.php
+│   ├── auth.php
+│   ├── config.php
+│   ├── dashboard.php
+│   ├── financing.php
+│   ├── login.php
+│   ├── profile.php
+│   ├── test.php
+│   ├── transactions.php
+│   └── zakat.php
+│
+├── assets/
+│   ├── css/
+│   │   ├── admin.css
+│   │   └── style.css
+│   └── uploads/
+│       └── profiles/
+│
+├── auth/
+│   ├── login.php
+│   ├── otp.php
+│   └── verify_otp.php
+│
+├── config/
+│   ├── config.php
+│   └── database.php
+│
+├── database/
+│   └── bank_iman_syariah.sql
+│
+├── docs/
+│   └── API_DOCUMENTATION.md
+│
+├── includes/
+│   ├── admin_sidebar.php
+│   └── sidebar.php
+│
+├── pages/
+│   └── admin/
+│
+├── index.php
+└── README.md
+```
 
-## 11. Keamanan Sistem
+*Catatan: Struktur di atas merupakan gambaran direktori utama proyek. File lainnya dapat ditambahkan sesuai pengembangan aplikasi.*
 
-Beberapa mekanisme keamanan yang diterapkan:
+---
 
-- Password pengguna disimpan menggunakan password hashing.
-- Autentikasi API menggunakan Bearer Token.
+## ⚙️ Persyaratan Sistem
+
+Sebelum menjalankan aplikasi, pastikan perangkat sudah memiliki:
+
+1. XAMPP.
+2. PHP.
+3. MySQL atau MariaDB.
+4. Visual Studio Code.
+5. Web Browser.
+
+---
+
+## 🚀 Cara Instalasi dan Menjalankan Aplikasi
+
+### 1. Clone Repository
+
+```bash
+git clone URL_REPOSITORY_GITHUB
+```
+
+Atau unduh repository dalam format ZIP.
+
+### 2. Pindahkan Folder Proyek
+
+Letakkan folder `bank_iman_syariah` ke dalam direktori:
+
+```text
+C:\xampp\htdocs\
+```
+
+### 3. Jalankan XAMPP
+
+Aktifkan:
+- Apache
+- MySQL
+
+### 4. Import Database
+
+1. Buka `http://localhost/phpmyadmin`.
+2. Buat database bernama `bank_iman_syariah`.
+3. Pilih database tersebut.
+4. Buka menu Import.
+5. Pilih file `database/bank_iman_syariah.sql`.
+6. Klik Import.
+
+### 5. Konfigurasi Database
+
+Buka file:
+
+`config/database.php`
+
+Sesuaikan konfigurasi database dengan pengaturan lokal:
+
+```php
+<?php
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "bank_iman_syariah";
+
+$conn = mysqli_connect(
+    $host,
+    $user,
+    $password,
+    $database
+);
+
+if (!$conn) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
+}
+```
+
+Sesuaikan konfigurasi apabila username atau password MySQL berbeda.
+
+### 6. Jalankan Aplikasi
+
+Buka browser dan akses:
+
+```text
+http://localhost/bank_iman_syariah/
+```
+
+### 7. Mengakses REST API
+
+Base URL:
+
+```text
+http://localhost/bank_iman_syariah/api/
+```
+
+Pengujian endpoint dapat dilakukan menggunakan Postman.
+
+---
+
+## 🔐 Keamanan
+
+Aplikasi menerapkan beberapa mekanisme keamanan, antara lain:
+
+- Password menggunakan password hashing.
+- Autentikasi REST API menggunakan Bearer Token.
 - Token disimpan dalam bentuk hash SHA-256.
 - Token memiliki masa berlaku.
-- Endpoint data pengguna dilindungi autentikasi.
-- Data pengguna diakses berdasarkan identitas dari token.
+- Endpoint API tertentu membutuhkan autentikasi.
+- Query database menggunakan prepared statements pada bagian yang menerapkannya.
+- Halaman admin dilindungi berdasarkan role pengguna.
 
-## 12. Dokumentasi Tampilan
+**Penting:** Jangan mengunggah password database, token akses, data nasabah asli, atau informasi rahasia ke repository publik.
 
-Screenshot aplikasi dan hasil pengujian dapat ditambahkan pada folder `screenshots` setelah tersedia.
+---
 
-## 13. Status Pengembangan
+## 🗄️ Database
 
-**Status:** Dalam tahap pengembangan dan pengujian.
+Database yang digunakan bernama:
 
-Pengembangan mencakup frontend, backend, database, REST API, dokumentasi, dan persiapan deployment.
+`bank_iman_syariah`
 
-## 14. Lisensi
+Database disimpan dalam format SQL pada folder:
 
-Proyek ini dikembangkan untuk keperluan pembelajaran dan tugas perkuliahan.
+`database/bank_iman_syariah.sql`
+
+File tersebut digunakan untuk membuat ulang struktur database dan data yang diperlukan untuk menjalankan aplikasi.
+
+---
+
+## 📖 Dokumentasi
+
+Dokumentasi tambahan proyek:
+
+- `docs/API_DOCUMENTATION.md` — Dokumentasi REST API.
+- `database/bank_iman_syariah.sql` — Struktur dan data database.
+
+---
+
+## 👥 Tim Pengembang
+
+**Nama Proyek:** Bank Iman Syariah
+
+**Jenis Proyek:** Aplikasi Perbankan Berbasis Web
+
+**Mata Kuliah:** [Basis data]
+
+**Dosen / Pembimbing:** [Dr. Ir. Iman Paryudi, M.Sc.]
+
+**Anggota Kelompok:**
+
+| No. | Nama Anggota | NIM | Kontribusi |
+|---|---|---|---|
+| 1 | [Muhammad Ryza Mahameru] | [4525210048] | [Kontribusi] |
+| 2 | [Azzahra Navisha] | [4525210118] | [Kontribusi] |
+| 3 | [Muhammad Rian Ramadhan] | [4525210047] | [Kontribusi] |
+| 4 | [Muhammad Rava Alvriansyah] | [4525210040] | [Kontribusi] |
+| 5 | [Muhammad Faisal Athallah] | [4525210120] | [Kontribusi] |
+| 6 | [Delia Veriz Maureta] | [45252100119] | [Kontribusi] |
+| 7 | [Naufalino Ahmad Saputra] | [4525210139] | [Kontribusi] |
+
+---
+
+## 📌 Catatan Pengembangan
+
+Bank Iman Syariah dikembangkan sebagai proyek pembelajaran untuk menerapkan konsep pemrograman web, pengelolaan database MySQL, autentikasi pengguna, REST API, serta pengelolaan layanan perbankan berbasis web.
+
+Pengembangan dilakukan secara bertahap dengan memperhatikan fungsionalitas, keamanan, dan kemudahan penggunaan aplikasi.
+
+---
+
+**BANK IMAN SYARIAH**  
+*Digital Banking with Sharia Principles.*

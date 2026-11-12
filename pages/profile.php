@@ -75,6 +75,86 @@ if (isset($_POST["upload_foto"])) {
     exit;
 }
 
+// TOKEN KEAMANAN FORM PIN
+if (empty($_SESSION["csrf_pin"])) {
+    $_SESSION["csrf_pin"] = bin2hex(random_bytes(32));
+}
+
+// PROSES BUAT / GANTI PIN
+if (
+    $_SERVER["REQUEST_METHOD"] === "POST" &&
+    ($_POST["aksi"] ?? "") === "ubah_pin"
+) {
+    $token = $_POST["csrf_pin"] ?? "";
+
+    if (!hash_equals($_SESSION["csrf_pin"], $token)) {
+        $_SESSION["pesan_profil"] = "Permintaan tidak valid.";
+        header("Location: profile.php");
+        exit;
+    }
+
+    $pinLama = trim($_POST["pin_lama"] ?? "");
+    $pinBaru = trim($_POST["pin_baru"] ?? "");
+    $konfirmasiPin = trim($_POST["konfirmasi_pin"] ?? "");
+
+    // Ambil PIN yang tersimpan
+    $stmtCekPin = mysqli_prepare(
+        $conn,
+        "SELECT pin_transaksi FROM users WHERE id = ?"
+    );
+
+    mysqli_stmt_bind_param($stmtCekPin, "i", $user_id);
+    mysqli_stmt_execute($stmtCekPin);
+
+    $resultPin = mysqli_stmt_get_result($stmtCekPin);
+    $dataPin = mysqli_fetch_assoc($resultPin);
+
+    mysqli_stmt_close($stmtCekPin);
+
+    $pinTersimpan = $dataPin["pin_transaksi"] ?? null;
+
+    if (!preg_match('/^[0-9]{6}$/', $pinBaru)) {
+        $_SESSION["pesan_profil"] = "PIN baru harus terdiri dari 6 angka.";
+    } elseif ($pinBaru !== $konfirmasiPin) {
+        $_SESSION["pesan_profil"] = "Konfirmasi PIN tidak cocok.";
+    } elseif (
+        !empty($pinTersimpan) &&
+        !password_verify($pinLama, $pinTersimpan)
+    ) {
+        $_SESSION["pesan_profil"] = "PIN lama yang kamu masukkan salah.";
+    } elseif (
+        !empty($pinTersimpan) &&
+        $pinLama === $pinBaru
+    ) {
+        $_SESSION["pesan_profil"] = "PIN baru harus berbeda dari PIN lama.";
+    } else {
+        $hashPin = password_hash($pinBaru, PASSWORD_DEFAULT);
+
+        $stmtUpdatePin = mysqli_prepare(
+            $conn,
+            "UPDATE users SET pin_transaksi = ? WHERE id = ?"
+        );
+
+        mysqli_stmt_bind_param(
+            $stmtUpdatePin,
+            "si",
+            $hashPin,
+            $user_id
+        );
+
+        if (mysqli_stmt_execute($stmtUpdatePin)) {
+            $_SESSION["pesan_profil"] = "PIN transaksi berhasil diperbarui!";
+        } else {
+            $_SESSION["pesan_profil"] = "Gagal memperbarui PIN.";
+        }
+
+        mysqli_stmt_close($stmtUpdatePin);
+    }
+
+    header("Location: profile.php");
+    exit;
+}
+
 // Pesan notifikasi
 $pesan = $_SESSION["pesan_profil"] ?? "";
 unset($_SESSION["pesan_profil"]);
@@ -190,19 +270,37 @@ $inisial = strtoupper(substr($profil["nama"], 0, 1));
 </div>
 
 <form method="POST" enctype="multipart/form-data" class="upload-photo-form">
+<form method="POST"
+      enctype="multipart/form-data"
+      class="upload-photo-form"
+      id="formUploadFoto">
+
+    <input
+        type="hidden"
+        name="upload_foto"
+        value="1"
+    >
+
     <input
         type="file"
         name="foto"
         id="foto"
         accept="image/jpeg,image/png,image/webp"
-        required
+        hidden
+        onchange="this.form.submit()"
     >
 
-    <button type="submit" name="upload_foto" class="security-action">
-        Upload Foto
+    <button
+        type="button"
+        class="security-action"
+        onclick="document.getElementById('foto').click()"
+    >
+        Ganti Foto
     </button>
 
     <small>JPG, PNG, atau WEBP. Maksimal 2 MB.</small>
+
+</form>
 </form>
 
             <div class="identity-info">
@@ -318,16 +416,98 @@ $inisial = strtoupper(substr($profil["nama"], 0, 1));
 
                 <div class="security-card">
 
-                    <strong>PIN transaksi</strong>
+             <div class="security-card">
 
-                    <p>
-                        PIN 6 digit untuk konfirmasi transaksi
-                        dan pembayaran.
-                    </p>
+    <strong>PIN transaksi</strong>
 
-                    <button type="button" disabled>
-                        Ubah PIN
-                    </button>
+    <p>
+        PIN 6 digit digunakan untuk mengonfirmasi
+        transfer dan transaksi Anda.
+    </p>
+
+    <button
+        type="button"
+        class="security-action"
+        onclick="bukaFormPIN()"
+    >
+        Buat / Ubah PIN
+    </button>
+
+</div>
+
+<div id="formPIN" class="security-card" style="display:none;">
+
+    <strong>Pengaturan PIN transaksi</strong>
+
+    <form method="POST" action="profile.php">
+
+        <input type="hidden" name="aksi" value="ubah_pin">
+
+        <input
+            type="hidden"
+            name="csrf_pin"
+            value="<?= htmlspecialchars($_SESSION["csrf_pin"]); ?>"
+        >
+
+        <div class="profile-field">
+            <label for="pin_lama">PIN lama</label>
+            <input
+                type="password"
+                id="pin_lama"
+                name="pin_lama"
+                maxlength="6"
+                inputmode="numeric"
+                pattern="[0-9]{6}"
+                placeholder="Masukkan PIN lama"
+            >
+            <small>Kosongkan jika belum pernah membuat PIN.</small>
+        </div>
+
+        <div class="profile-field">
+            <label for="pin_baru">PIN baru</label>
+            <input
+                type="password"
+                id="pin_baru"
+                name="pin_baru"
+                maxlength="6"
+                minlength="6"
+                inputmode="numeric"
+                pattern="[0-9]{6}"
+                placeholder="Masukkan 6 angka"
+                required
+            >
+        </div>
+
+        <div class="profile-field">
+            <label for="konfirmasi_pin">Konfirmasi PIN baru</label>
+            <input
+                type="password"
+                id="konfirmasi_pin"
+                name="konfirmasi_pin"
+                maxlength="6"
+                minlength="6"
+                inputmode="numeric"
+                pattern="[0-9]{6}"
+                placeholder="Ulangi PIN baru"
+                required
+            >
+        </div>
+
+        <button type="submit" class="security-action">
+            Simpan PIN
+        </button>
+
+        <button
+            type="button"
+            class="btn-cancel"
+            onclick="tutupFormPIN()"
+        >
+            Batal
+        </button>
+
+    </form>
+
+</div>
 
                 </div>
 
@@ -342,6 +522,16 @@ $inisial = strtoupper(substr($profil["nama"], 0, 1));
     </main>
 
 </div>
+
+<script>
+function bukaFormPIN() {
+    document.getElementById("formPIN").style.display = "block";
+}
+
+function tutupFormPIN() {
+    document.getElementById("formPIN").style.display = "none";
+}
+</script>
 
 </body>
 </html>

@@ -4494,3 +4494,248 @@ body {
     border-radius: 50%;
     display: block;
 }
+
+/* PILIHAN LOGIN ADMIN DAN NASABAH */
+
+.login-role {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 10px 0 22px;
+}
+
+.login-role .role-option {
+    cursor: pointer;
+    display: block;
+}
+
+.login-role .role-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.login-role .role-content {
+    min-height: 105px;
+    border: 1px solid #dce8e1;
+    border-radius: 10px;
+    background: #fbfdfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.login-role .role-icon {
+    font-size: 23px;
+}
+
+.login-role .role-content strong {
+    color: #294b3b;
+    font-size: 14px;
+}
+
+.login-role .role-content small {
+    color: #829087;
+    font-size: 11px;
+}
+
+.login-role .role-option input:checked + .role-content {
+    border: 2px solid #087653;
+    background: #edf7f1;
+}
+
+.login-role .role-option:hover .role-content {
+    border-color: #087653;
+}
+
+/* PERBAIKAN TAMPILAN PILIHAN ROLE LOGIN */
+
+.login-page .login-box .login-role {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100%;
+    margin: 18px 0 22px !important;
+}
+
+.login-page .login-box .login-role .role-option {
+    display: block !important;
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+.login-page .login-box .login-role .role-option input[type="radio"] {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    overflow: hidden;
+    clip-path: inset(50%);
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.login-page .login-box .role-content {
+    min-height: 96px !important;
+    width: 100%;
+    padding: 14px 8px !important;
+    border: 1px solid #d5dfd9 !important;
+    border-radius: 11px !important;
+    background: #ffffff !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+
+    text-align: center !important;
+    transition: 0.2s ease;
+}
+
+.login-page .login-box .role-icon {
+    font-size: 22px !important;
+    line-height: 1;
+}
+
+.login-page .login-box .role-content strong {
+    color: #202b26 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+.login-page .login-box .role-content small {
+    display: none !important;
+}
+
+.login-page .login-box .role-option input[type="radio"]:checked + .role-content {
+    border: 2px solid #07845b !important;
+    background: #e5f3ec !important;
+}
+
+.login-page .login-box .role-option:hover .role-content {
+    border-color: #07845b !important;
+}
+
+@media (max-width: 420px) {
+    .login-page .login-box .login-role {
+        gap: 8px !important;
+    }
+}
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #71817b;
+}
+
+.register-link a {
+    color: #176b59;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #71817b;
+}
+
+.register-link a {
+    color: #087a57;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 3px;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+/* Tombol Transfer pada kartu rekening */
+.account-cash-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.account-cash-actions a {
+    text-align: center;
+}
+
+.account-cash-actions .transfer-account-button {
+    grid-column: 1 / -1;
+    background: #087957;
+    color: #ffffff;
+    border: 1px solid #087957;
+    padding: 12px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.account-cash-actions .transfer-account-button:hover {
+    background: #056447;
+}
+/* FORM PIN TRANSAKSI */
+#formPIN {
+    margin-top: 15px;
+}
+
+#formPIN form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#formPIN input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce5df;
+    border-radius: 8px;
+    outline: none;
+}
+
+#formPIN input:focus {
+    border-color: #087957;
+}
+
+#formPIN small {
+    color: #718078;
+    font-size: 12px;
+}
+
+#formPIN button {
+    cursor: pointer;
+}
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar-brand-text h2 {
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sidebar-brand-text h2 strong {
+    font-weight: 700;
+}
+
+.sidebar-brand-text span {
+    display: block;
+    font-size: 16px;
+    margin-top: 3px;
+}

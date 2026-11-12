@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -8,7 +9,7 @@ if (!isset($_SESSION["user_id"])) {
 
 require_once "../config/database.php";
 
-$user_id = $_SESSION["user_id"];
+$user_id = (int) $_SESSION["user_id"];
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: setor_tunai.php");
@@ -26,9 +27,9 @@ if (!$account_id || !$nominal || $nominal < 1) {
 mysqli_begin_transaction($conn);
 
 try {
-    // Pastikan rekening milik pengguna dan masih aktif
-    $query = "SELECT id FROM accounts
-              WHERE id = ? AND user_id = ? AND status = 'Aktif'
+    // Periksa kepemilikan dan status rekening
+    $query = "SELECT id, status FROM accounts
+              WHERE id = ? AND user_id = ?
               FOR UPDATE";
 
     $stmt = mysqli_prepare($conn, $query);
@@ -44,10 +45,14 @@ try {
         throw new Exception("Rekening tidak ditemukan.");
     }
 
+    if ($rekening["status"] !== "Aktif") {
+        throw new Exception("Rekening tidak aktif. Setor tunai ditolak.");
+    }
+
     // Tambahkan saldo
     $query = "UPDATE accounts
               SET saldo = saldo + ?
-              WHERE id = ? AND user_id = ?";
+              WHERE id = ? AND user_id = ? AND status = 'Aktif'";
 
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "dii", $nominal, $account_id, $user_id);
@@ -69,6 +74,7 @@ try {
               VALUES (?, ?, ?, ?, ?, NOW())";
 
     $stmt = mysqli_prepare($conn, $query);
+
     mysqli_stmt_bind_param(
         $stmt,
         "isssd",

@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -61,6 +62,28 @@ unset($_SESSION["pesan_pembiayaan"]);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pembiayaan - Bank Iman Syariah</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* STATUS PENGAJUAN */
+
+        .payment-status.disetujui {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+
+        .payment-status.menunggu {
+            background: #fef3c7;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+
+        .payment-status.ditolak {
+            background: #fee2e2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+    </style>
 </head>
 
 <body>
@@ -291,6 +314,21 @@ unset($_SESSION["pesan_pembiayaan"]);
 
                         <tbody>
                             <?php foreach ($pengajuan as $item): ?>
+
+                                <?php
+                                $status = $item["status"];
+
+                                if ($status === "Disetujui") {
+                                    $statusClass = "disetujui";
+                                } elseif ($status === "Ditolak") {
+                                    $statusClass = "ditolak";
+                                } elseif ($status === "Menunggu Persetujuan") {
+                                    $statusClass = "menunggu";
+                                } else {
+                                    $statusClass = "akan-datang";
+                                }
+                                ?>
+
                                 <tr>
                                     <td>PPA-<?= str_pad($item["id"], 4, "0", STR_PAD_LEFT); ?></td>
                                     <td><?= htmlspecialchars($item["jenis_akad"]); ?></td>
@@ -298,11 +336,12 @@ unset($_SESSION["pesan_pembiayaan"]);
                                     <td><?= (int)$item["tenor"]; ?> bulan</td>
                                     <td>Rp <?= number_format($item["estimasi_angsuran"], 0, ',', '.'); ?></td>
                                     <td>
-                                        <span class="payment-status akan-datang">
-                                            <?= htmlspecialchars($item["status"]); ?>
+                                        <span class="payment-status <?= $statusClass; ?>">
+                                            <?= htmlspecialchars($status); ?>
                                         </span>
                                     </td>
                                 </tr>
+
                             <?php endforeach; ?>
                         </tbody>
                     </table>
